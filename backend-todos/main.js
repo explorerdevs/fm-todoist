@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const config = require("./config");
+const config = require("./config/index");
 const connectDB = require("./config/db");
 const TodosRouter = require("./routes/todoRoutes");
 const { unknownEndpoint, errorHandler } = require("./middleware/middleware");
