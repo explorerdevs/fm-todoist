@@ -2,31 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="author" content="The Explorers Web Dev Group">
+  <meta name="description" content="The Frontend Mentor Challenge: TODO List App made fully responsive, with light & dark modes, and full backend.">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  </style> -->
 </head>
 <body>
+  <!-- div for react stuff, html code below -->
+  <div id="app"></div>
 
-  Todo
+  <!-- html code that can be copied into react -->
+  <header>
+    <div class="container">
+      <h1>Todo</h1>
+    <button id="toggle" title="Change light/dark mode"><img src="images\icon-moon.svg" alt=""></button>
+    </div>
+  </header>
+  <div class="container">
+    
 
-  <!-- Add dynamic number --> items left
+    <form id="newTodo">
+      <!-- button for checklist as we'll use JS to add to list -->
+      <button class="checkbox"></button>
+      <input type="text" name="newItem" id="newItem" placeholder="Create a new todo..." required>
+    </form>
 
-  All
-  Active 
-  Completed
+    <div id="todoList">
+      <!-- where JS will inject list items -->
+      <div id="listItems"></div>
+      <div id="todoControls">
+        <div class="control-info">
+          <p><span id="numberOfItems">5</span> items left</p>
+          <button>Clear Completed</button>
+        </div>
+        <div class="items-control-group">
+          <button>All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
+      </div>
+    </div>
 
-  Clear Completed
+    <div id="reorderList">Drag and drop to reorder list</div>
 
-  Drag and drop to reorder list
+  </div>
+  
+
+  
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
