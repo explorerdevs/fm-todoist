@@ -19,5 +19,5 @@ app.use(unknownEndpoint);
 app.use(errorHandler);
 
 app.listen(config.PORT, () =>
-    console.log(`Server listening on ${config.PORT}`)
+  console.log(`Server listening on ${config.PORT}`)
 );
