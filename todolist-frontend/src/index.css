@@ -34,7 +34,7 @@ body {
 /* LAYOUT */
 header {
     padding: 4em 0;
-    background-image: url("todolist-frontend\\src\\images\\bg-mobile-dark.jpg");
+    background-image: url("./images/bg-mobile-dark.jpg");
     background: linear-gradient(to right, #c31432, #240b36);
 }
 
