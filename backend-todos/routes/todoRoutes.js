@@ -1,10 +1,10 @@
 const express = require("express");
 const {
-    fetchTodos,
-    findTodoById,
-    createTodo,
-    updateTodo,
-    deleteTodo,
+  fetchTodos,
+  findTodoById,
+  createTodo,
+  updateTodo,
+  deleteTodo,
 } = require("../controllers/todos");
 
 const todosRouter = express.Router();
