@@ -11,7 +11,7 @@ function App() {
         <div className="container">
           <h1>Todo</h1>
           <button id="toggle" title="Change light/dark mode">
-            <img src="images\icon-moon.svg" alt="" />
+            <img src="./images/icon-moon.svg" alt="" />
           </button>
         </div>
       </header>
