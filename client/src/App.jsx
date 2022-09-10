@@ -60,7 +60,7 @@ function App() {
         <a href="https://wfeliciano20.github.io/Portfolio/" target="_blank">
           William Rios
         </a>
-        , and <a href="#">Samuel Chukwuzube</a>.
+        , and <a href="https://github.com/princemuel">Samuel Chukwuzube</a>.
       </div>
     </React.Fragment>
   );
