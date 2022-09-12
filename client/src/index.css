@@ -1,14 +1,78 @@
 /* use this file to add css resets */
 
 /* RESET */
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
+
+* {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
 }
 
+:root {
+  /* Primary */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 80%,
+    hsl(280, 87%, 65%) 100%
+  );
+  /* Light theme */
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue-lt: hsl(233, 11%, 84%);
+  --dark-grayish-blue-lt: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue-lt: hsl(235, 19%, 35%);
+  --box-shadow-lt: rgb(163, 163, 163);
+  --icon-lt: url(../images/icon-moon.svg);
+  --bg-mb-lt: url(../images/bg-mobile-light.jpg);
+  --bg-dk-lt: url(../images/bg-desktop-light.jpg);
+  /* Dark theme */
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue-dt: hsl(234, 39%, 85%);
+  --light-grayish-blue-dt/*hover*/: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue-one: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue-two: hsl(237, 14%, 26%);
+  --box-shadow-dt: #000;
+  --icon-dt: url(/images/icon-sun.svg);
+  --bg-mb-dt: url(../images/bg-mobile-dark.jpg);
+  --bg-dk-dt: url(../images/bg-desktop-dark.jpg);
+}
+
+/* general */
+body {
+  background-color: var(--very-light-grayish-blue);
+  background-image: var(--bg-mb-lt);
+  background-repeat: no-repeat;
+  background-size: contain;
+  object-fit: contain;
+  width: 100vw;
+  height: auto;
+}
+.main {
+  width: 90%;
+  max-width: 480px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.btn-desktop {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+/*
 body,
 div,
 h1,
@@ -39,6 +103,8 @@ body {
   background-color: #181824;
 }
 
+*/
+
 /* LAYOUT */
 header {
   padding: 4em 0;
@@ -58,6 +124,13 @@ header {
 .container {
   width: 350px;
   margin-inline: auto;
+}
+
+.container h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 7px;
 }
 
 header .container {
@@ -83,6 +156,7 @@ header .container {
 
 #newTodo {
   margin-top: -4em;
+  max-width: 370px;
 }
 
 input,
