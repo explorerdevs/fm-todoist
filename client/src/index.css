@@ -1,12 +1,46 @@
 /* use this file to add css resets */
 
 /* RESET */
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
+
+* {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+
+:root {
+  /* Primary */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 80%,
+    hsl(280, 87%, 65%) 100%
+  );
+  /* Light theme */
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue-lt: hsl(233, 11%, 84%);
+  --dark-grayish-blue-lt: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue-lt: hsl(235, 19%, 35%);
+  --box-shadow-lt: rgb(163, 163, 163);
+  --icon-lt: url(../images/icon-moon.svg);
+  --bg-mb-lt: url(../images/bg-mobile-light.jpg);
+  --bg-dk-lt: url(../images/bg-desktop-light.jpg);
+  /* Dark theme */
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue-dt: hsl(234, 39%, 85%);
+  --light-grayish-blue-dt/*hover*/: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue-one: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue-two: hsl(237, 14%, 26%);
+  --box-shadow-dt: #000;
+  --icon-dt: url(/images/icon-sun.svg);
+  --bg-mb-dt: url(../images/bg-mobile-dark.jpg);
+  --bg-dk-dt: url(../images/bg-desktop-dark.jpg);
 }
 
 body,
@@ -49,7 +83,6 @@ header {
 }
 
 #toggle {
-  border: 1px solid red;
   width: 25px;
   height: 25px;
   color: white;
@@ -58,6 +91,13 @@ header {
 .container {
   width: 350px;
   margin-inline: auto;
+}
+
+.container h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 7px;
 }
 
 header .container {
@@ -83,6 +123,7 @@ header .container {
 
 #newTodo {
   margin-top: -4em;
+  max-width: 370px;
 }
 
 input,
@@ -107,6 +148,19 @@ button {
 .control-info,
 .items-control-group {
   font-weight: 300;
+}
+
+footer {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+footer a {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 12px;
 }
 
 @media (min-width: 600px) {
