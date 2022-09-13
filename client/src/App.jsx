@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SunSVG from "./images/icon-sun.svg";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,7 +12,7 @@ function App() {
         <div className="container">
           <h1>Todo</h1>
           <button id="toggle" title="Change light/dark mode">
-            <img src="./images/icon-moon.svg" alt="" />
+            <img src={SunSVG} alt="" />
           </button>
         </div>
       </header>
