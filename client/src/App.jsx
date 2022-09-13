@@ -48,21 +48,23 @@ function App() {
         <div id="reorderList">Drag and drop to reorder list</div>
       </div>
 
-      <div className="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-          Frontend Mentor
-        </a>
-        . Coded by <a href="#">Jolene Kearse</a>,
-        <a href="https://www.ashmoreno.dev" target="_blank">
-          Ash Moreno
-        </a>
-        ,
-        <a href="https://wfeliciano20.github.io/Portfolio/" target="_blank">
-          William Rios
-        </a>
-        , and <a href="https://github.com/princemuel">Samuel Chukwuzube</a>.
-      </div>
+      <footer>
+        <div className="attribution">
+          Challenge by&nbsp;
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+            Frontend Mentor
+          </a>
+          . Coded by <a href="#">Jolene Kearse</a>, <br />
+          <a href="https://www.ashmoreno.dev" target="_blank">
+            Ash Moreno
+          </a>
+          ,&nbsp;
+          <a href="https://wfeliciano20.github.io/Portfolio/" target="_blank">
+            William Rios
+          </a>
+          , and <a href="https://github.com/princemuel">Samuel Chukwuzube</a>.
+        </div>
+      </footer>
     </React.Fragment>
   );
 }
