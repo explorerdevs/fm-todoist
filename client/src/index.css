@@ -126,6 +126,14 @@ header .container {
   max-width: 370px;
 }
 
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--light-grayish-blue-lt);
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
 input,
 .listItems,
 .control-info,
