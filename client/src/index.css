@@ -43,36 +43,6 @@
   --bg-dk-dt: url(../images/bg-desktop-dark.jpg);
 }
 
-/* general */
-body {
-  background-color: var(--very-light-grayish-blue);
-  background-image: var(--bg-mb-lt);
-  background-repeat: no-repeat;
-  background-size: contain;
-  object-fit: contain;
-  width: 100vw;
-  height: auto;
-}
-.main {
-  width: 90%;
-  max-width: 480px;
-  height: auto;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.btn-desktop {
-  display: block;
-}
-.hidden {
-  display: none;
-}
-.visible {
-  display: block;
-}
-
-/*
 body,
 div,
 h1,
@@ -103,8 +73,6 @@ body {
   background-color: #181824;
 }
 
-*/
-
 /* LAYOUT */
 header {
   padding: 4em 0;
@@ -115,7 +83,6 @@ header {
 }
 
 #toggle {
-  border: 1px solid red;
   width: 25px;
   height: 25px;
   color: white;
@@ -181,6 +148,19 @@ button {
 .control-info,
 .items-control-group {
   font-weight: 300;
+}
+
+footer {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+footer a {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 12px;
 }
 
 @media (min-width: 600px) {
