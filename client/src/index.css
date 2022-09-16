@@ -74,19 +74,19 @@ body {
 }
 
 /* LAYOUT */
-header {
+/* header {
   padding: 4em 0;
   height: 200px;
-  background-image: url("./images/bg-desktop-dark.jpg");
+  background-image: url("./images/bg-mobile-dark.jpg");
   background-position: center;
   background-size: cover;
-}
+} */
 
-#toggle {
+/* #toggle {
   width: 25px;
   height: 25px;
   color: white;
-}
+} */
 
 .container {
   width: 350px;
@@ -100,10 +100,10 @@ header {
   letter-spacing: 7px;
 }
 
-header .container {
+/* header .container {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .control-info {
   display: flex;
@@ -143,6 +143,7 @@ input,
 button {
   background: none;
   color: #fffffe;
+  cursor: pointer;
 }
 
 .control-info,

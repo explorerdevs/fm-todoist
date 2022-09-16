@@ -1,0 +1,58 @@
+header {
+    padding: 4em 0;
+    height: 200px;
+    background-image: url("./images/bg-mobile-dark.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.align {
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    gap: 5em;
+}
+
+.flex-spread {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#toggle {
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+
+#toggle:hover,
+#toggle:focus {
+    opacity: .7;
+}
+
+#newItem {
+    position: relative;
+    padding-left: 11vw;
+}
+
+.checkbox {
+    position: absolute;
+    margin-top: .2rem;
+    margin-left: .2rem;
+    width: 30px;
+    height: 30px;
+    border: .1rem solid white;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+/* TODO change the checked(?) state */
+.checkbox:checked {
+    background-color:
+    linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 80%,
+    hsl(280, 87%, 65%) 100%
+  );
+}
