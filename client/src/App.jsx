@@ -11,21 +11,23 @@ function App() {
       <header>
         <div className="container">
           <h1>Todo</h1>
-          <button id="toggle" title="Change light/dark mode">
+          <button className="toggle" title="Change light/dark mode">
             <img src={SunSVG} alt="" />
           </button>
         </div>
       </header>
       <div className="container">
         <form id="newTodo">
-          <button className="checkbox"></button>
-          <input
-            type="text"
-            name="newItem"
-            id="newItem"
-            placeholder="Create a new todo..."
-            required
-          />
+          <div className="form-control">
+            <button className="checkbox"></button>
+            <input
+              type="text"
+              name="newItem"
+              id="newItem"
+              placeholder="Create a new todo..."
+              required
+            />
+          </div>
         </form>
 
         <div id="todoList">
