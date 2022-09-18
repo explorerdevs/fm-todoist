@@ -121,7 +121,7 @@ header .container {
 
 /* COMPONENTS */
 
-#newTodo {
+.newTodo {
   /* margin-top: -4em;
   max-width: 370px; */
   background-color: var(--very-dark-desaturated-blue);
@@ -198,7 +198,7 @@ footer a {
   .items-control-group {
     width: 600px;
   }
-  #todoControls {
+  .todoControls {
     margin-top: 2rem;
   }
   .items-control-group {
