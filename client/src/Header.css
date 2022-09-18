@@ -30,8 +30,13 @@ header {
     opacity: .7;
 }
 
+.check-list {
+    margin-top: -3em;
+}
+
 .newItem {
     position: relative;
+    height: 36px;
     padding-left: 11vw;
 }
 
@@ -55,4 +60,9 @@ header {
     hsl(280, 87%, 65%) 80%,
     hsl(280, 87%, 65%) 100%
   );
+}
+
+input[type="text"] {
+    color: hsl(236, 33%, 92%);
+    background-color: hsl(235, 24%, 19%);
 }
