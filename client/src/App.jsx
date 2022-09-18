@@ -17,25 +17,25 @@ function App() {
         </div>
       </header>
       <div className="container">
-        <form id="newTodo">
+        <form className="newTodo">
           <div className="form-control">
             <button className="checkbox"></button>
             <input
               type="text"
               name="newItem"
-              id="newItem"
+              className="newItem"
               placeholder="Create a new todo..."
               required
             />
           </div>
         </form>
 
-        <div id="todoList">
-          <div id="listItems"></div>
-          <div id="todoControls">
+        <div className="todoList">
+          <div className="listItems"></div>
+          <div className="todoControls">
             <div className="control-info">
               <p>
-                <span id="numberOfItems">5</span> items left
+                <span className="numberOfItems">5</span> items left
               </p>
               <button>Clear Completed</button>
             </div>
@@ -47,7 +47,7 @@ function App() {
           </div>
         </div>
 
-        <div id="reorderList">Drag and drop to reorder list</div>
+        <div className="reorderList">Drag and drop to reorder list</div>
       </div>
 
       <footer>
