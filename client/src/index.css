@@ -175,6 +175,12 @@ button {
   cursor: pointer;
 }
 
+button:hover,
+button:focus {
+  font-weight: 400;
+  opacity: .75;
+}
+
 .control-info,
 .items-control-group {
   font-weight: 300;
