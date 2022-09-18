@@ -178,7 +178,7 @@ button {
 button:hover,
 button:focus {
   font-weight: 400;
-  opacity: .75;
+  color: hsl(220, 98%, 61%)
 }
 
 .control-info,
