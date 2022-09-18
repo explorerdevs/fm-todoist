@@ -74,13 +74,6 @@ body {
 }
 
 /* LAYOUT */
-/* header {
-  padding: 4em 0;
-  height: 200px;
-  background-image: url("./images/bg-mobile-dark.jpg");
-  background-position: center;
-  background-size: cover;
-} */
 
 .container {
   width: 350px;
@@ -103,7 +96,7 @@ body {
 header .container {
   display: flex;
   justify-content: space-between;
-} */
+}
 
 .control-info {
   display: flex;
@@ -184,19 +177,6 @@ button:focus {
 .control-info,
 .items-control-group {
   font-weight: 300;
-}
-
-footer {
-  text-align: center;
-  font-weight: lighter;
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-footer a {
-  text-align: center;
-  font-weight: lighter;
-  font-size: 12px;
 }
 
 @media (min-width: 600px) {

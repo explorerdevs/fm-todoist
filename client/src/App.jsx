@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Header from "./Header"
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   const [newItem, setNewItem] = useState("");
@@ -40,27 +41,8 @@ function App() {
 
       <div className="reorderList container">Drag and drop to reorder list</div>
 
+      <Footer />
 
-      <footer>
-        <div className="attribution container">
-          Challenge by&nbsp;
-          <a
-            href="https://www.frontendmentor.io?ref=challenge"
-            target="_blank"
-          >
-            Frontend Mentor
-          </a>
-          . Coded by <a href="#">Jolene Kearse</a>, <br />
-          <a href="https://www.ashmoreno.dev" target="_blank">
-            Ash Moreno
-          </a>
-          ,&nbsp;
-          <a href="https://wfeliciano20.github.io/Portfolio/" target="_blank">
-            William Rios
-          </a>
-          , and <a href="https://github.com/princemuel">Samuel Chukwuzube</a>.
-        </div>
-      </footer>
     </React.Fragment>
   );
 }
