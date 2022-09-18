@@ -10,7 +10,7 @@ const Header = (newItem, setNewItem) => {
                 <div className="flex-spread">
                     <h1>Todo</h1>
                     <button
-                        id="toggle"
+                        className="toggle"
                         title="Change light/dark mode"
                         aria-label="Add Item">
                         <img src={SunSVG} alt=""></img>
@@ -24,7 +24,7 @@ const Header = (newItem, setNewItem) => {
                         <input
                             type="text"
                             name="newItem"
-                            id="newItem"
+                            className="newItem"
                             placeholder="Create a new todo..."
                             required
                         />

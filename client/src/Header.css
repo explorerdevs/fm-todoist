@@ -19,18 +19,18 @@ header {
     align-items: center;
 }
 
-#toggle {
+.toggle {
     width: 25px;
     height: 25px;
     color: white;
 }
 
-#toggle:hover,
-#toggle:focus {
+.toggle:hover,
+.toggle:focus {
     opacity: .7;
 }
 
-#newItem {
+.newItem {
     position: relative;
     padding-left: 11vw;
 }
