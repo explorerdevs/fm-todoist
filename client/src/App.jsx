@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import "./index.css";
 
 function App() {
   const [newItem, setNewItem] = useState("");
@@ -15,15 +16,23 @@ function App() {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const listItems = [...items];
     setAndSaveItems(listItems);
-  }
+  };
 
   return (
     <React.Fragment>
       <Header />
 
-
       <div className="todoList container">
-        <div className="listItems"></div>
+        <div className="listItems">
+          <button className="checkbox"></button>
+          <input
+            type="text"
+            name="newItem"
+            className="newItem"
+            placeholder="Jog around the park 3x"
+            required
+          />
+        </div>
         <div className="todoControls">
           <div className="control-info">
             <p>
@@ -42,7 +51,6 @@ function App() {
       <div className="reorderList container">Drag and drop to reorder list</div>
 
       <Footer />
-
     </React.Fragment>
   );
 }

@@ -115,10 +115,8 @@ header .container {
 /* COMPONENTS */
 
 .newTodo {
-  /* margin-top: -4em;
-  max-width: 370px; */
   background-color: var(--very-dark-desaturated-blue);
-  padding: 15px;
+  padding: 20px;
   margin-bottom: 1rem;
   border-radius: 4px;
   margin-top: -75px;
@@ -157,6 +155,15 @@ input,
   background-color: #25273c;
 }
 
+.listItems {
+  background-color: var(--very-dark-desaturated-blue);
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  margin-top: -30px;
+  border: 1px solid red;
+}
+
 .control-info {
   margin-bottom: 2rem;
   padding: 0.5rem;
@@ -171,7 +178,7 @@ button {
 button:hover,
 button:focus {
   font-weight: 400;
-  color: hsl(220, 98%, 61%)
+  color: hsl(220, 98%, 61%);
 }
 
 .control-info,
