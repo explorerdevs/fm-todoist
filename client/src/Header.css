@@ -1,6 +1,6 @@
 .primary-header {
-  padding: 4em 0;
   height: 200px;
+  padding: 4em 0;
   background-image: url("./images/bg-mobile-dark.jpg");
   background-position: center;
   background-size: cover;
@@ -15,8 +15,8 @@
 
 .flex-spread {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-top: -1em;
 }
 
@@ -43,10 +43,10 @@
 
 .checkbox {
   position: absolute;
+  width: 30px;
+  aspect-ratio: 1;
   margin-top: 0.2rem;
   margin-left: 0.2rem;
-  width: 30px;
-  height: 30px;
   border: 0.1rem solid white;
   border-radius: 50%;
   z-index: 1000;
