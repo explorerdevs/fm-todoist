@@ -4,8 +4,6 @@ import Footer from "./Footer";
 function App() {
   return (
     <React.Fragment>
-      <div id="app"></div>
-
       <header className="primary-header">
         <div className="container">
           <h1>Todo</h1>
