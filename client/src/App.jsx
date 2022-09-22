@@ -1,54 +1,50 @@
-import React, { useState } from "react";
-import Header from "./Header";
+import React from "react";
 import Footer from "./Footer";
-import "./index.css";
 
 function App() {
-  const [newItem, setNewItem] = useState("");
-  const [items, setItems] = useState("");
-
-  const setAndSaveItems = (newItem) => {
-    setItems(newItem);
-    localStorage.setItem("todolist", JSON.stringify(newItem));
-  };
-
-  const addItem = (item) => {
-    const id = items.length ? items[items.length - 1].id + 1 : 1;
-    const listItems = [...items];
-    setAndSaveItems(listItems);
-  };
-
   return (
     <React.Fragment>
-      <Header />
+      <div id="app"></div>
 
-      <div className="todoList container">
-        <div className="listItems">
+      <header className="primary-header">
+        <div className="container">
+          <h1>Todo</h1>
+          <button id="toggle" title="Change light/dark mode">
+            <img src="images\icon-moon.svg" alt="" />
+          </button>
+        </div>
+      </header>
+      <div className="container">
+        <form id="newTodo">
           <button className="checkbox"></button>
           <input
             type="text"
             name="newItem"
-            className="newItem"
-            placeholder="Jog around the park 3x"
+            id="newItem"
+            placeholder="Create a new todo..."
             required
           />
-        </div>
-        <div className="todoControls">
-          <div className="control-info">
-            <p>
-              <span className="numberOfItems">5</span> items left
-            </p>
-            <button>Clear Completed</button>
-          </div>
-          <div className="items-control-group">
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
-          </div>
-        </div>
-      </div>
+        </form>
 
-      <div className="reorderList container">Drag and drop to reorder list</div>
+        <div id="todoList">
+          <div id="listItems"></div>
+          <div id="todoControls">
+            <div className="control-info">
+              <p>
+                <span id="numberOfItems">5</span> items left
+              </p>
+              <button>Clear Completed</button>
+            </div>
+            <div className="items-control-group">
+              <button>All</button>
+              <button>Active</button>
+              <button>Completed</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="reorderList">Drag and drop to reorder list</div>
+      </div>
 
       <Footer />
     </React.Fragment>

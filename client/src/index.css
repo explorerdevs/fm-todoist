@@ -1,15 +1,5 @@
 /* use this file to add css resets */
 
-/* RESET */
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 18px;
-}
-
 :root {
   /* Primary */
   --bright-blue: hsl(220, 98%, 61%);
@@ -41,6 +31,24 @@
   --icon-dt: url(/images/icon-sun.svg);
   --bg-mb-dt: url(../images/bg-mobile-dark.jpg);
   --bg-dk-dt: url(../images/bg-desktop-dark.jpg);
+
+  --ff-primary: "Josefin Sans", sans-serif;
+}
+
+/* RESET */
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
 body,
@@ -52,29 +60,23 @@ form,
 input,
 ul,
 li {
-  margin: 0;
-  padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
 li {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
 body {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: var(--ff-primary);
+  font-size: 1.125rem;
   font-weight: 400;
   color: #fffffe;
   background-color: #181824;
 }
 
 /* LAYOUT */
-
 .container {
   width: 350px;
   margin-inline: auto;
@@ -93,7 +95,7 @@ body {
   color: white;
 }
 
-header .container {
+.primary-header .container {
   display: flex;
   justify-content: space-between;
 }

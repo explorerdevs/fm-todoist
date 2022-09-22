@@ -1,8 +1,8 @@
 import React from "react";
-import SunSVG from "./images/icon-sun.svg";
 import "./Header.css";
+import SunSVG from "./images/icon-sun.svg";
 
-const Header = (newItem, setNewItem) => {
+const Header = ({ newItem, setNewItem }) => {
   return (
     <header>
       <div className="container align">
