@@ -1,0 +1,49 @@
+.newItem {
+  position: relative;
+  height: 48px;
+  width: min(90%, 22rem);
+  margin-inline: auto;
+  margin-top: -5em;
+}
+
+.sr-only {
+  position: absolute;
+  left: -99999px;
+}
+
+input {
+  height: 48px;
+  padding-left: 2.75em;
+  border-radius: .5em;
+}
+
+.checkbox {
+  position: absolute;
+  width: 30px;
+  aspect-ratio: 1;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  border: 0.1rem solid hsl(234, 11%, 52%);
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.checkbox:focus,
+.checkbox:hover {
+  border-color: hsl(220, 98%, 61%);
+}
+
+/* TODO change the checked(?) state */
+.checkbox:checked {
+  background-color: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 80%,
+    hsl(280, 87%, 65%) 100%
+  );
+}
+
+input[type="text"] {
+  color: hsl(236, 33%, 92%);
+  background-color: hsl(235, 24%, 19%);
+}
