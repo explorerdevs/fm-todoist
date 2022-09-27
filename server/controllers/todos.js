@@ -36,8 +36,6 @@ const createTodo = async (req, res) => {
   createdTodo
     ? res.status(201).json({ message: "New todo created" })
     : res.status(400).json({ message: "Invalid data received" });
-
-  res.status(201).send(createdTodo);
 };
 
 const updateTodo = async (req, res) => {
@@ -75,7 +73,7 @@ const deleteTodo = async (req, res) => {
   }
 
   const deletedTodo = await todo.deleteOne();
-  const reply = `The todo with the ID ${deletedTodo.id} deleted`;
+  const reply = `The todo with the ID ${id} is deleted`;
   res.send(204).json(reply);
 };
 
