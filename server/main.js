@@ -13,7 +13,7 @@ app.use(cors());
 
 connectDB();
 
-app.use("/api/v1/todos/", TodosRouter);
+app.use("/api/v1/todos", TodosRouter);
 
 app.use(unknownEndpoint);
 app.use(errorHandler);
