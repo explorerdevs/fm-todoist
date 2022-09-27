@@ -9,10 +9,11 @@ const {
 
 const todosRouter = express.Router();
 
-todosRouter.get("/", fetchTodos);
-todosRouter.get("/:id", findTodoById);
-todosRouter.post("/", createTodo);
-todosRouter.put("/:id", updateTodo);
-todosRouter.delete("/:id", deleteTodo);
+todosRouter.get("/", fetchTodos).post("/", createTodo);
+
+todosRouter
+  .get("/:id", findTodoById)
+  .put("/:id", updateTodo)
+  .delete("/:id", deleteTodo);
 
 module.exports = todosRouter;
