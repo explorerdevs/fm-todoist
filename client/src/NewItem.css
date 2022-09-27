@@ -23,27 +23,22 @@ input {
   aspect-ratio: 1;
   margin-top: 0.5rem;
   margin-left: 0.5rem;
-  border: 0.1rem solid hsl(234, 11%, 52%);
+  border: 0.1rem solid var(--dark-grayish-blue);
   border-radius: 50%;
   z-index: 1000;
 }
 
 .checkbox:focus,
 .checkbox:hover {
-  border-color: hsl(220, 98%, 61%);
+  border-color: var(--bright-blue);
 }
 
 /* TODO change the checked(?) state */
 .checkbox:checked {
-  background-color: linear-gradient(
-    135deg,
-    hsl(192, 100%, 67%) 0%,
-    hsl(280, 87%, 65%) 80%,
-    hsl(280, 87%, 65%) 100%
-  );
+  background-color: var(--check-background);
 }
 
 input[type="text"] {
-  color: hsl(236, 33%, 92%);
-  background-color: hsl(235, 24%, 19%);
+  color: var(--light-grayish-blue-dt);
+  background-color: var(--very-dark-desaturated-blue);
 }
