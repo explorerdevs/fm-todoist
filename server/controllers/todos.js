@@ -55,7 +55,9 @@ const updateTodo = async (req, res) => {
   todoToUpdate.completed = completed;
 
   const updatedTodo = await todoToUpdate.save();
-  res.send(200).json(`The todo with id: "${updatedTodo?.id}" is updated`);
+  res
+    .status(200)
+    .json({ message: `The todo with id: "${updatedTodo?._id}" is updated` });
 };
 
 const deleteTodo = async (req, res) => {
@@ -73,8 +75,7 @@ const deleteTodo = async (req, res) => {
   }
 
   const deletedTodo = await todo.deleteOne();
-  const reply = `The todo with the ID ${id} is deleted`;
-  res.send(204).json(reply);
+  res.status(200).json({ message: `The todo with the ID ${id} is deleted` });
 };
 
 module.exports = {
