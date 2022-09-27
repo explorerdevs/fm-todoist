@@ -14,6 +14,8 @@ const TodoSchema = new mongoose.Schema({
   },
 });
 
+// The function below is not working
+// the _id and __v are still present in the todo object in the DB
 TodoSchema.set("toJSON", {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
