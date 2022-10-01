@@ -19,10 +19,7 @@ const NewItem = ({ newItem, setNewItem, handleSubmit }) => {
                 placeholder="Create a new todo..."
                 value={newItem}
                 onChange={(e) => setNewItem(e.target.value)}
-            >
-
-            </input>
-
+            />
         </form>
     );
 };
