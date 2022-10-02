@@ -1,3 +1,16 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 0;
+  color: var(--light-grayish-blue-dt);
+  background-color: var(--very-dark-desaturated-blue);
+}
+
+li > label {
+  margin-left: 3em;
+}
+
 .checkbox {
   position: absolute;
   width: 30px;
@@ -14,14 +27,20 @@
   border-color: var(--bright-blue);
 }
 
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--light-grayish-blue-dt);
+/* TODO change the checked(?) state */
+.checkbox:checked {
+  background-color: var(--check-background);
+}
+
+ul {
+  width: min(90%, 22rem);
+  margin-inline: auto;
+  margin-top: 1em;
+  border-radius: .5rem;
   background-color: var(--very-dark-desaturated-blue);
 }
 
-li > label {
-  margin-left: 3em;
+input[type="checkbox"] {
+  color: var(--light-grayish-blue-dt);
+  background-color: var(--very-dark-desaturated-blue);
 }

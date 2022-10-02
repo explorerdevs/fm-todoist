@@ -2,7 +2,8 @@ import React from 'react';
 import DeleteSVG from "./images/icon-cross.svg";
 import "./List.css";
 
-const List = ({ items, setItems, handleCheck, handleDelete }) => {
+
+const List = ({ items, handleCheck }) => {
   return (
     <>
       {items.length ? (

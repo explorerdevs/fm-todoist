@@ -4,8 +4,8 @@ import SunSVG from "./images/icon-sun.svg";
 
 const Header = () => {
   return (
-    <header className="primary-header container">
-      <div className="align">
+    <header className="primary-header">
+      <div className="align container">
         <div className="flex-spread">
           <h1>Todo</h1>
           <button

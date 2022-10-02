@@ -6,6 +6,8 @@
   background-size: cover;
 }
 
+/* Layout */
+
 .container {
   width: min(90%, 22rem) !important;
   margin-inline: auto;
@@ -24,6 +26,8 @@
   justify-content: space-between;
   margin-top: -1em;
 }
+
+/* Toggle */
 
 .toggle {
   width: 25px;
