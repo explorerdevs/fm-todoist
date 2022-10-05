@@ -1,5 +1,15 @@
-/* use this file to add css resets */
+/*!Theme Name:
+Theme URI: https://karaokecommerce.netlify.app/
+Repository: https://github.com/princemuel/fm-audiophile-ecommerce
+Description: A Todo List App made fully responsive, with light & dark modes, a complete backend and drag n drop functionality
+Authors' Names: , Samuel Chukwuzube
+Authors' Monikers: , princemuel
+Version: 01
+*/
 
+/* ////////////////////////////////////////////
+// BASE CONFIGURATION
+*/
 :root {
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-900: hsl(0, 0%, 0%);
@@ -10,18 +20,20 @@
   --clr-primary-400: #d2d3db;
   --clr-primary-500: #d1d2da;
   --clr-primary-600: #c8cbe7;
+  --clr-primary-700: #9394a5;
 
-  --clr-secondary-100: #9394a5;
-  --clr-secondary-200: #767992;
-  --clr-secondary-300: #5b5e7e;
-  --clr-secondary-400: #4d5067;
-  --clr-secondary-500: #494c6b;
+  --clr-secondary-100: #767992;
+  --clr-secondary-200: #5b5e7e;
+  --clr-secondary-300: #4d5067;
+  --clr-secondary-400: #494c6b;
   --clr-secondary-600: #484b6a;
-  --clr-secondary-700: #393a4b;
-  --clr-secondary-800: #25273d;
-  --clr-secondary-900: #171823;
+  --clr-secondary-500: #393a4b;
+  --clr-secondary-600: #25273d;
+  --clr-secondary-700: #171823;
 
+  --clr-accent-200: #55ddff;
   --clr-accent-100: #3a7cfd;
+  --clr-accent-300: #c058f3;
 
   --clr-gradient-100: linear-gradient(
     135deg,
@@ -29,6 +41,14 @@
     hsl(280, 87%, 65%) 80%,
     hsl(280, 87%, 65%) 100%
   );
+
+  /* Switch the following  */
+  --bg-header-image-mobile-light: url(/images/bg-mobile-light.jpg);
+  --bg-header-image-mobile-dark: url(/images/bg-mobile-dark.jpg);
+  --bg-header-image-desktop-light: url(/images/bg-desktop-light.jpg);
+  --bg-header-image-desktop-dark: url(/images/bg-mobile-dark.jpg);
+
+  /* Use this to switch images at breakpoints and  */
 
   /* Primary */
   --clr-active: hsl(220, 98%, 61%);
@@ -71,11 +91,30 @@
   --ff-primary: "Josefin Sans", sans-serif;
 }
 
-/* RESET */
+/* -------------------------------- */
+/*             RESETS               */
+/* -------------------------------- */
 
 html {
   box-sizing: border-box;
   font-size: 100%;
+  /* font-size: 56.25%; */
+  text-rendering: optimizeSpeed;
+}
+@media (min-width: 75em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+html,
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 *,
@@ -100,16 +139,62 @@ li {
   vertical-align: baseline;
 }
 
-li {
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  position: relative;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
-  color: #fffffe;
+  --bg-header-image: var(--bg-header-image-mobile-dark);
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-light: var(--fw-300);
+  --fw-regular: var(--fw-400);
+  --fw-bold: var(--fw-700);
+
+  color: var(--clr-neutral-100);
   background-color: #181824;
-  font-family: var(--ff-primary);
+  font-family: var(--ff-body);
   font-size: 1.125rem;
-  font-weight: var(--fw-400);
+  font-weight: var(--fw-regular);
 }
 
 /* LAYOUT */
