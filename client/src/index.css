@@ -2,26 +2,33 @@
 
 :root {
   --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-neutral-200: #fafafa;
-  --clr-neutral-300: #e4e5f1;
-  --clr-neutral-350: #E3E4F1;
-  --clr-neutral-400: #d2d3db;
-  --clr-neutral-500: #9394a5;
-  --clr-neutral-600: #484b6a;
-  --clr-neutral-700: #494C6B;
-  --clr-neutral-800: #393A4B;
   --clr-neutral-900: hsl(0, 0%, 0%);
 
-  --clr-100: #5B5E7E;
-  --clr-200: #C8CBE7;
-  --clr-300: #25273D;
-  --clr-400: #171823;
-  --clr-500: #4D5067;
-  --clr-600: #767992;
+  --clr-primary-100: #fafafa;
+  --clr-primary-200: #e4e5f1;
+  --clr-primary-300: #e3e4f1;
+  --clr-primary-400: #d2d3db;
+  --clr-primary-500: #d1d2da;
+  --clr-primary-600: #c8cbe7;
 
+  --clr-secondary-100: #9394a5;
+  --clr-secondary-200: #767992;
+  --clr-secondary-300: #5b5e7e;
+  --clr-secondary-400: #4d5067;
+  --clr-secondary-500: #494c6b;
+  --clr-secondary-600: #484b6a;
+  --clr-secondary-700: #393a4b;
+  --clr-secondary-800: #25273d;
+  --clr-secondary-900: #171823;
 
-  --clr-primary-100: #D1D2DA;
-  --clr-primary-200: #3A7CFD;
+  --clr-accent-100: #3a7cfd;
+
+  --clr-gradient-100: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 80%,
+    hsl(280, 87%, 65%) 100%
+  );
 
   /* Primary */
   --clr-active: hsl(220, 98%, 61%);
@@ -54,6 +61,8 @@
   --icon-dt: url(/images/icon-sun.svg);
   --bg-mb-dt: url(/images/bg-mobile-dark.jpg);
   --bg-dk-dt: url(/images/bg-desktop-dark.jpg);
+
+  --fs-100: 1rem;
 
   --fw-300: 300;
   --fw-400: 400;

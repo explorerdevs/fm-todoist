@@ -1,26 +1,25 @@
-import React from 'react';
+import React from "react";
 import DeleteSVG from "./images/icon-cross.svg";
 import "./List.css";
 
-
-const List = ({ items, handleCheck }) => {
+const List = ({ items, handleIsCompleted }) => {
   return (
     <>
       {items.length ? (
-        <ul className='container'>
+        <ul className="container">
           {items.map((item) => (
-            <li className="item" key={item.id} >
+            <li className="item" key={item.id}>
               <input
                 type="checkbox"
-                className='checkbox'
-                onChange={() => handleCheck(item.id)}
+                className="checkbox"
+                onChange={() => handleIsCompleted(item.id)}
                 checked={item.checked}
               />
               <label>{item.item}</label>
               <button
-                className='deleteBtn'
-                title='Delete item'
-                aria-label='Delete Item'
+                className="deleteBtn"
+                title="Delete item"
+                aria-label="Delete Item"
               >
                 <img src={DeleteSVG} alt=""></img>
               </button>
@@ -31,7 +30,7 @@ const List = ({ items, handleCheck }) => {
         <p>Add todos above</p>
       )}
     </>
-  )
-}
+  );
+};
 
 export default List;
