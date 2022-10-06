@@ -31,15 +31,15 @@ Version: 01
   --clr-secondary-600: #25273d;
   --clr-secondary-700: #171823;
 
-  --clr-accent-200: #55ddff;
-  --clr-accent-100: #3a7cfd;
+  --clr-accent-100: #55ddff;
+  --clr-accent-200: #3a7cfd;
   --clr-accent-300: #c058f3;
 
   --clr-gradient-100: linear-gradient(
     135deg,
-    hsl(192, 100%, 67%) 0%,
-    hsl(280, 87%, 65%) 80%,
-    hsl(280, 87%, 65%) 100%
+    var(--clr-accent-100) 0%,
+    var(--clr-accent-200) 80%,
+    var(--clr-accent-200) 100%
   );
 
   /* Switch the following  */
@@ -83,27 +83,42 @@ Version: 01
   --bg-dk-dt: url(/images/bg-desktop-dark.jpg);
 
   --fs-100: 1rem;
+  --fs-200: 1.2rem;
+  --fs-300: 1.4rem;
+  --fs-400: 1.5rem;
+  --fs-500: 1.6rem;
+  --fs-600: 1.8rem;
+  --fs-700: 2.4rem;
+  --fs-800: 3.6rem;
+  --fs-900: 4rem;
 
   --fw-300: 300;
   --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
   --fw-700: 700;
 
   --ff-primary: "Josefin Sans", sans-serif;
 }
 
-/* -------------------------------- */
+/* ================================= */
 /*             RESETS               */
-/* -------------------------------- */
+/* ================================= */
 
 html {
   box-sizing: border-box;
-  font-size: 100%;
-  /* font-size: 56.25%; */
+  font-size: 56.25%; /* 8px */
   text-rendering: optimizeSpeed;
+}
+/* Responsive Font Sizes At Breakpoints */
+@media (min-width: 45em) {
+  html {
+    font-size: 56.25%; /* 9px */
+  }
 }
 @media (min-width: 75em) {
   html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* 10px */
   }
 }
 @media (min-width: 112.5em) {
@@ -150,6 +165,13 @@ body {
   position: relative;
 }
 
+/* Make images easier to work with */
+img {
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
@@ -180,158 +202,132 @@ a {
   }
 }
 
+/* ================================= */
+/*            TYPOGRAPHY            */
+/* ================================= */
+
 body {
   --bg-header-image: var(--bg-header-image-mobile-dark);
 
+  --text-color: var(--clr-primary-600);
+  --bg-color: var(--clr-secondary-700);
+
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
+
+  --fs-body: var(--fs-600);
 
   --fw-light: var(--fw-300);
   --fw-regular: var(--fw-400);
   --fw-bold: var(--fw-700);
 
-  color: var(--clr-neutral-100);
-  background-color: #181824;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   font-family: var(--ff-body);
-  font-size: 1.125rem;
+  font-size: var(--fs-body);
   font-weight: var(--fw-regular);
 }
 
-/* LAYOUT */
-.container {
-  width: min(90%, 22rem); /* chooses 90% width on mobile  */
-  margin-inline: auto;
+/* ================================= */
+/*            UTILITIES              */
+/* ================================= */
+
+/* *********** FLOW UTILS ************* */
+:where(.flow > :not(:first-child)) {
+  margin-block-start: var(--flow-space, 1.6rem);
 }
 
-.container h1 {
-  font-size: 25px;
-  font-weight: var(--fw-700);
-  letter-spacing: 15px;
-  text-transform: uppercase;
-}
-
-.toggle {
-  width: 25px;
-  aspect-ratio: 1;
-  color: white;
-}
-
-.primary-header .container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.control-info {
-  display: flex;
-  justify-content: space-between;
-  width: 98%;
-  margin-bottom: 2rem;
-}
-
-.items-control-group {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin: 2rem 0;
-}
-
-/* COMPONENTS */
-
-.newTodo {
-  margin-top: -75px;
-  margin-bottom: 1rem;
-  padding: 20px;
-  border-radius: 4px;
-  background-color: var(--very-dark-desaturated-blue);
-}
-
-.form-control {
-  display: grid;
-  grid-template-columns: 10% 1fr;
-}
-
-.form-control > * {
-  align-items: center;
-  height: 100%;
-}
-
-.form-control .checkbox {
+/* *********** BUTTON UTILS ************* */
+.btn {
   display: inline-flex;
-  align-self: center;
-  justify-self: center;
-  width: 20px;
-  aspect-ratio: 1;
-  margin-right: 5px;
-  border: 1px solid var(--very-dark-grayish-blue-two);
-  border-radius: 50%;
-}
-
-.form-control input {
-  font-size: 13px;
-}
-
-input,
-.listItems,
-.control-info,
-.items-control-group {
-  width: 100%;
-  background-color: #25273c;
-}
-
-.listItems {
-  margin-top: -30px;
-  margin-bottom: 1rem;
-  padding: 10px;
-  border: 1px solid red;
-  border-radius: 4px;
-  background-color: var(--very-dark-desaturated-blue);
-}
-
-.control-info {
-  margin-bottom: 2rem;
-  padding: 0.5rem;
-}
-
-button {
-  color: #fffffe;
-  background: none;
+  border: none;
+  border-radius: var(--b-radius);
+  outline: none;
+  background: transparent;
+  font: inherit;
+  letter-spacing: var(--spacing);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  mix-blend-mode: normal;
   cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+}
+.btn:where(:hover, :focus-visible) {
+  outline: none;
 }
 
-button:hover,
-button:focus {
-  color: hsl(220, 98%, 61%);
-  font-weight: var(--fw-400);
-}
-
-.control-info,
-.items-control-group {
-  font-weight: var(--fw-300);
-}
-
-@media (min-width: 600px) {
-  .container,
-  .controls-info,
-  .items-control-group {
-    width: 600px;
-  }
-  .todoControls {
-    margin-top: 2rem;
-  }
-  .items-control-group {
-    margin-top: -3.5em;
-    width: 600px;
-  }
-}
-
+/* *********** FLEX UTILS ************* */
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
 }
 
-.align-center {
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.items-center {
   align-items: center;
 }
-.space-between {
+.justify-between {
   justify-content: space-between;
+}
+
+/* *********** TYPOGRAPHY UTILS ************* */
+/* FONT SIZES */
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+.fs-900 {
+  font-size: var(--fs-900);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-100 {
+  font-size: var(--fs-100);
+}
+
+/* FONT WEIGHTS */
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+.fw-300 {
+  font-weight: var(--fw-300);
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
