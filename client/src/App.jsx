@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DragAndDrop from "./DragAndDrop";
 import Footer from "./Footer";
-import Header from "./Header";
+import { Header, TodoList } from "./components";
 import ItemsControlGroup from "./ItemsControlGroup";
 import List from "./List";
 import NewItem from "./NewItem";

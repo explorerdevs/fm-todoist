@@ -37,12 +37,13 @@ Version: 01
 
   --clr-gradient-100: linear-gradient(
     135deg,
-    var(--clr-accent-100) 0%,
-    var(--clr-accent-200) 80%,
-    var(--clr-accent-200) 100%
+    var(--clr-accent-200) 0%,
+    var(--clr-accent-300) 80%,
+    var(--clr-accent-300) 100%
   );
 
   /* Switch the following  */
+
   --bg-header-image-mobile-light: url(/images/bg-mobile-light.jpg);
   --bg-header-image-mobile-dark: url(/images/bg-mobile-dark.jpg);
   --bg-header-image-desktop-light: url(/images/bg-desktop-light.jpg);
@@ -51,6 +52,7 @@ Version: 01
   /* Use this to switch images at breakpoints and  */
 
   /* Primary */
+
   --clr-active: hsl(220, 98%, 61%);
   --check-background: linear-gradient(
     135deg,
@@ -58,6 +60,7 @@ Version: 01
     hsl(280, 87%, 65%) 80%,
     hsl(280, 87%, 65%) 100%
   );
+
   /* Light theme */
 
   --very-light-gray: hsl(0, 0%, 98%);
@@ -69,7 +72,9 @@ Version: 01
   --icon-lt: url(/images/icon-moon.svg);
   --bg-mb-lt: url(/images/bg-mobile-light.jpg);
   --bg-dk-lt: url(/images/bg-desktop-light.jpg);
+
   /* Dark theme */
+
   --very-dark-blue: hsl(235, 21%, 11%);
   --very-dark-desaturated-blue: hsl(235, 24%, 19%);
   --light-grayish-blue-dt: hsl(234, 39%, 85%);
@@ -82,6 +87,8 @@ Version: 01
   --bg-mb-dt: url(/images/bg-mobile-dark.jpg);
   --bg-dk-dt: url(/images/bg-desktop-dark.jpg);
 
+  /* font-size */
+
   --fs-100: 1rem;
   --fs-200: 1.2rem;
   --fs-300: 1.4rem;
@@ -91,6 +98,8 @@ Version: 01
   --fs-700: 2.4rem;
   --fs-800: 3.6rem;
   --fs-900: 4rem;
+
+  /* font-weight */
 
   --fw-300: 300;
   --fw-400: 400;
@@ -110,12 +119,9 @@ html {
   font-size: 56.25%; /* 8px */
   text-rendering: optimizeSpeed;
 }
+
 /* Responsive Font Sizes At Breakpoints */
-@media (min-width: 45em) {
-  html {
-    font-size: 56.25%; /* 9px */
-  }
-}
+
 @media (min-width: 75em) {
   html {
     font-size: 62.5%; /* 10px */
@@ -233,11 +239,14 @@ body {
 /* ================================= */
 
 /* *********** FLOW UTILS ************* */
+/* give spacing */
+
 :where(.flow > :not(:first-child)) {
   margin-block-start: var(--flow-space, 1.6rem);
 }
 
 /* *********** BUTTON UTILS ************* */
+
 .btn {
   display: inline-flex;
   border: none;
@@ -285,7 +294,9 @@ body {
 }
 
 /* *********** TYPOGRAPHY UTILS ************* */
+
 /* FONT SIZES */
+
 .fs-xl {
   font-size: var(--fs-xl);
 }
@@ -318,6 +329,7 @@ body {
 }
 
 /* FONT WEIGHTS */
+
 .fw-700 {
   font-weight: var(--fw-700);
 }
@@ -330,4 +342,11 @@ body {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+/* layout */
+
+.container {
+  width: min(90%, 54rem);
+  margin-inline: auto;
 }
