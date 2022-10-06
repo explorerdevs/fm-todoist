@@ -8,11 +8,6 @@
 
 /* Layout */
 
-.container {
-  width: min(90%, 22rem) !important;
-  margin-inline: auto;
-}
-
 .align {
   display: flex;
   flex-direction: column;
