@@ -1,0 +1,352 @@
+/*!Theme Name:
+Theme URI: https://karaokecommerce.netlify.app/
+Repository: https://github.com/princemuel/fm-audiophile-ecommerce
+Description: A Todo List App made fully responsive, with light & dark modes, a complete backend and drag n drop functionality
+Authors' Names: , Samuel Chukwuzube
+Authors' Monikers: , princemuel
+Version: 01
+*/
+
+/* ////////////////////////////////////////////
+// BASE CONFIGURATION
+*/
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+
+  --clr-primary-100: #fafafa;
+  --clr-primary-200: #e4e5f1;
+  --clr-primary-300: #e3e4f1;
+  --clr-primary-400: #d2d3db;
+  --clr-primary-500: #d1d2da;
+  --clr-primary-600: #c8cbe7;
+  --clr-primary-700: #9394a5;
+
+  --clr-secondary-100: #767992;
+  --clr-secondary-200: #5b5e7e;
+  --clr-secondary-300: #4d5067;
+  --clr-secondary-400: #494c6b;
+  --clr-secondary-600: #484b6a;
+  --clr-secondary-500: #393a4b;
+  --clr-secondary-600: #25273d;
+  --clr-secondary-700: #171823;
+
+  --clr-accent-100: #55ddff;
+  --clr-accent-200: #3a7cfd;
+  --clr-accent-300: #c058f3;
+
+  --clr-gradient-100: linear-gradient(
+    135deg,
+    var(--clr-accent-200) 0%,
+    var(--clr-accent-300) 80%,
+    var(--clr-accent-300) 100%
+  );
+
+  /* Switch the following  */
+
+  --bg-header-image-mobile-light: url(/images/bg-mobile-light.jpg);
+  --bg-header-image-mobile-dark: url(/images/bg-mobile-dark.jpg);
+  --bg-header-image-desktop-light: url(/images/bg-desktop-light.jpg);
+  --bg-header-image-desktop-dark: url(/images/bg-mobile-dark.jpg);
+
+  /* Use this to switch images at breakpoints and  */
+
+  /* Primary */
+
+  --clr-active: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 80%,
+    hsl(280, 87%, 65%) 100%
+  );
+
+  /* Light theme */
+
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue-lt: hsl(233, 11%, 84%);
+  --dark-grayish-blue-lt: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue-lt: hsl(235, 19%, 35%);
+  --box-shadow-lt: rgb(163, 163, 163);
+  --icon-lt: url(/images/icon-moon.svg);
+  --bg-mb-lt: url(/images/bg-mobile-light.jpg);
+  --bg-dk-lt: url(/images/bg-desktop-light.jpg);
+
+  /* Dark theme */
+
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue-dt: hsl(234, 39%, 85%);
+  --light-grayish-blue-dt/*hover*/: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue-one: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue-two: hsl(237, 14%, 26%);
+  --box-shadow-dt: #000;
+  --icon-dt: url(/images/icon-sun.svg);
+  --bg-mb-dt: url(/images/bg-mobile-dark.jpg);
+  --bg-dk-dt: url(/images/bg-desktop-dark.jpg);
+
+  /* font-size */
+
+  --fs-100: 1rem;
+  --fs-200: 1.2rem;
+  --fs-300: 1.4rem;
+  --fs-400: 1.5rem;
+  --fs-500: 1.6rem;
+  --fs-600: 1.8rem;
+  --fs-700: 2.4rem;
+  --fs-800: 3.6rem;
+  --fs-900: 4rem;
+
+  /* font-weight */
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --ff-primary: "Josefin Sans", sans-serif;
+}
+
+/* ================================= */
+/*             RESETS               */
+/* ================================= */
+
+html {
+  box-sizing: border-box;
+  font-size: 56.25%; /* 8px */
+  text-rendering: optimizeSpeed;
+}
+
+/* Responsive Font Sizes At Breakpoints */
+
+@media (min-width: 75em) {
+  html {
+    font-size: 62.5%; /* 10px */
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body,
+div,
+h1,
+button,
+span,
+form,
+input,
+ul,
+li {
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  position: relative;
+}
+
+/* Make images easier to work with */
+img {
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ================================= */
+/*            TYPOGRAPHY            */
+/* ================================= */
+
+body {
+  --bg-header-image: var(--bg-header-image-mobile-dark);
+
+  --text-color: var(--clr-primary-600);
+  --bg-color: var(--clr-secondary-700);
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fs-body: var(--fs-600);
+
+  --fw-light: var(--fw-300);
+  --fw-regular: var(--fw-400);
+  --fw-bold: var(--fw-700);
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+}
+
+/* ================================= */
+/*            UTILITIES              */
+/* ================================= */
+
+/* *********** FLOW UTILS ************* */
+/* give spacing */
+
+:where(.flow > :not(:first-child)) {
+  margin-block-start: var(--flow-space, 1.6rem);
+}
+
+/* *********** BUTTON UTILS ************* */
+
+.btn {
+  display: inline-flex;
+  border: none;
+  border-radius: var(--b-radius);
+  outline: none;
+  background: transparent;
+  font: inherit;
+  letter-spacing: var(--spacing);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  mix-blend-mode: normal;
+  cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+}
+.btn:where(:hover, :focus-visible) {
+  outline: none;
+}
+
+/* *********** FLEX UTILS ************* */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/* *********** TYPOGRAPHY UTILS ************* */
+
+/* FONT SIZES */
+
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+.fs-900 {
+  font-size: var(--fs-900);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-100 {
+  font-size: var(--fs-100);
+}
+
+/* FONT WEIGHTS */
+
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+.fw-300 {
+  font-weight: var(--fw-300);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* layout */
+
+.container {
+  width: min(90%, 54rem);
+  margin-inline: auto;
+}
