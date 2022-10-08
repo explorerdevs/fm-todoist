@@ -1,11 +1,5 @@
-import React, { useState } from "react";
-import DragAndDrop from "./DragAndDrop";
-import Footer from "./Footer";
+import React from "react";
 import { Header, TodoList } from "./components";
-import ItemsControlGroup from "./ItemsControlGroup";
-import List from "./List";
-import NewItem from "./NewItem";
-import ToDoControls from "./ToDoControls";
 
 const data = [
   {
@@ -26,48 +20,15 @@ const data = [
 ];
 
 function App() {
-  const [newItem, setNewItem] = useState("");
-  const [items, setItems] = useState(data);
-
-  const handleSubmit = (/** @type {React.FormEvent<HTMLFormElement>} */ e) => {
-    e.preventDefault();
-    // addItem(newItem);
-    setNewItem("");
-  };
-
-  const handleIsCompleted = (/** @type {number | string} */ id) => {
-    const listItems = items.map((item) =>
-      item.id === id ? { ...item, checked: !item.checked } : item
-    );
-    setItems(listItems);
-    localStorage.setItem("todos", JSON.stringify(listItems));
-  };
-
-  const handleDelete = (/** @type {number | string} */ id) => {
-    const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
-    localStorage.setItem("todos", JSON.stringify(listItems));
-  };
-
   return (
-    <div className="App">
+    <>
       <Header />
-      <NewItem
-        newItem={newItem}
-        setNewItem={setNewItem}
-        handleSubmit={handleSubmit}
-      />
-      <List
-        items={items}
-        setItems={setItems}
-        handleCheck={handleIsCompleted}
-        handleDelete={handleDelete}
-      />
-      <ToDoControls />
-      <ItemsControlGroup />
-      <DragAndDrop />
-      <Footer />
-    </div>
+      <TodoList />
+
+      <div className="container">
+        <p>Drag and drop to reorder list</p>
+      </div>
+    </>
   );
 }
 

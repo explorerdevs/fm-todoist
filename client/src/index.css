@@ -42,53 +42,13 @@ Version: 01
     var(--clr-accent-300) 100%
   );
 
-  /* Switch the following  */
-
+  /* Switch the following at themes and breakpoints */
   --bg-header-image-mobile-light: url(/images/bg-mobile-light.jpg);
   --bg-header-image-mobile-dark: url(/images/bg-mobile-dark.jpg);
   --bg-header-image-desktop-light: url(/images/bg-desktop-light.jpg);
   --bg-header-image-desktop-dark: url(/images/bg-mobile-dark.jpg);
 
-  /* Use this to switch images at breakpoints and  */
-
-  /* Primary */
-
-  --clr-active: hsl(220, 98%, 61%);
-  --check-background: linear-gradient(
-    135deg,
-    hsl(192, 100%, 67%) 0%,
-    hsl(280, 87%, 65%) 80%,
-    hsl(280, 87%, 65%) 100%
-  );
-
-  /* Light theme */
-
-  --very-light-gray: hsl(0, 0%, 98%);
-  --very-light-grayish-blue: hsl(236, 33%, 92%);
-  --light-grayish-blue-lt: hsl(233, 11%, 84%);
-  --dark-grayish-blue-lt: hsl(236, 9%, 61%);
-  --very-dark-grayish-blue-lt: hsl(235, 19%, 35%);
-  --box-shadow-lt: rgb(163, 163, 163);
-  --icon-lt: url(/images/icon-moon.svg);
-  --bg-mb-lt: url(/images/bg-mobile-light.jpg);
-  --bg-dk-lt: url(/images/bg-desktop-light.jpg);
-
-  /* Dark theme */
-
-  --very-dark-blue: hsl(235, 21%, 11%);
-  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-  --light-grayish-blue-dt: hsl(234, 39%, 85%);
-  --light-grayish-blue-dt/*hover*/: hsl(236, 33%, 92%);
-  --dark-grayish-blue: hsl(234, 11%, 52%);
-  --very-dark-grayish-blue-one: hsl(233, 14%, 35%);
-  --very-dark-grayish-blue-two: hsl(237, 14%, 26%);
-  --box-shadow-dt: #000;
-  --icon-dt: url(/images/icon-sun.svg);
-  --bg-mb-dt: url(/images/bg-mobile-dark.jpg);
-  --bg-dk-dt: url(/images/bg-desktop-dark.jpg);
-
-  /* font-size */
-
+  /* font-sizes */
   --fs-100: 1rem;
   --fs-200: 1.2rem;
   --fs-300: 1.4rem;
@@ -99,8 +59,7 @@ Version: 01
   --fs-800: 3.6rem;
   --fs-900: 4rem;
 
-  /* font-weight */
-
+  /* font-weights */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
@@ -292,6 +251,9 @@ body {
 .justify-between {
   justify-content: space-between;
 }
+.justify-between {
+  justify-content: space-between;
+}
 
 /* *********** TYPOGRAPHY UTILS ************* */
 
@@ -342,6 +304,17 @@ body {
 
 .uppercase {
   text-transform: uppercase;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: none;
+  white-space: nowrap;
+  border: 0;
 }
 
 /* layout */
