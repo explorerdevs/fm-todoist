@@ -5,12 +5,24 @@
 
 .btn-checkbox {
   --b-radius: 50%;
+  position: relative;
 
   width: 2.4rem;
   aspect-ratio: 1;
-  border: 1px solid;
+  border: 1px solid transparent;
   background-image: url(/images/icon-check.svg), var(--clr-gradient-100);
   background-repeat: no-repeat;
   background-position: center;
-  overflow: hidden;
+  background-clip: padding-box;
+}
+
+.btn-checkbox:hover:before {
+  /* --clr-secondary-600 */
+
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: var(--clr-secondary-600);
 }
