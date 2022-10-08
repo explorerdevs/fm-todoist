@@ -12,10 +12,7 @@ const GradientBtn = ({ type, srtext }) => {
 
 const ThemeBtn = () => {
   return (
-    <button
-      type="button"
-      className={`btn ${btnStyles["btn-toggle"]} ${btnStyles["checked"]}`}
-    >
+    <button type="button" className={`btn ${btnStyles["btn-toggle"]}`}>
       <img src={SunSvg} alt="" />
       <span className="sr-only">Toggle The Theme</span>
     </button>
