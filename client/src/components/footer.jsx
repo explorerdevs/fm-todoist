@@ -1,10 +1,10 @@
 import React from "react";
-import "./Footer.css";
+import styles from "../styles/footer.module.css";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="attribution container">
+    <footer className={styles.footer}>
+      <div className="container attribution">
         Challenge by&nbsp;
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
           Frontend Mentor
