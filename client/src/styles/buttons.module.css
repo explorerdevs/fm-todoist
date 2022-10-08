@@ -1,0 +1,16 @@
+.btn-toggle {
+  width: 2.6rem;
+  aspect-ratio: 1;
+}
+
+.btn-checkbox {
+  --b-radius: 50%;
+
+  width: 2.4rem;
+  aspect-ratio: 1;
+  border: 1px solid;
+  background-image: url(/images/icon-check.svg), var(--clr-gradient-100);
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
