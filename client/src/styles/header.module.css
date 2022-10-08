@@ -1,4 +1,6 @@
-.btn-toggle {
-  width: 2.6rem;
-  aspect-ratio: 1;
+.primary-header {
+  min-height: 30rem;
+  background-image: var(--bg-header-image);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

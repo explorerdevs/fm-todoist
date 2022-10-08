@@ -21,24 +21,24 @@ Version: 01
   --clr-primary-500: #d1d2da;
   --clr-primary-600: #c8cbe7;
   --clr-primary-700: #9394a5;
+  --clr-primary-800: #9495a5;
 
   --clr-secondary-100: #767992;
   --clr-secondary-200: #5b5e7e;
   --clr-secondary-300: #4d5067;
   --clr-secondary-400: #494c6b;
-  --clr-secondary-600: #484b6a;
-  --clr-secondary-500: #393a4b;
-  --clr-secondary-600: #25273d;
-  --clr-secondary-700: #171823;
+  --clr-secondary-500: #484b6a;
+  --clr-secondary-600: #393a4b;
+  --clr-secondary-700: #25273d;
+  --clr-secondary-800: #171823;
 
   --clr-accent-100: #55ddff;
   --clr-accent-200: #3a7cfd;
   --clr-accent-300: #c058f3;
 
   --clr-gradient-100: linear-gradient(
-    135deg,
-    var(--clr-accent-200) 0%,
-    var(--clr-accent-300) 80%,
+    90deg,
+    var(--clr-accent-100) 0%,
     var(--clr-accent-300) 100%
   );
 
@@ -46,7 +46,7 @@ Version: 01
   --bg-header-image-mobile-light: url(/images/bg-mobile-light.jpg);
   --bg-header-image-mobile-dark: url(/images/bg-mobile-dark.jpg);
   --bg-header-image-desktop-light: url(/images/bg-desktop-light.jpg);
-  --bg-header-image-desktop-dark: url(/images/bg-mobile-dark.jpg);
+  --bg-header-image-desktop-dark: url(/images/bg-desktop-dark.jpg);
 
   /* font-sizes */
   --fs-100: 1rem;
@@ -122,7 +122,7 @@ li {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  line-height: 1.5;
+  line-height: 1;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -168,15 +168,53 @@ a {
 }
 
 /* ================================= */
+/*            THEME                  */
+/* ================================= */
+
+:root[data-theme="theme-dark"] {
+  --bg-header-image: var(--bg-header-image-mobile-dark);
+  --bg-color: var(--clr-secondary-700);
+
+  --text-color-form: var(--clr-secondary-100);
+  --text-color-form-active: var(--clr-primary-600);
+
+  --text-color-todo: var(--clr-primary-600);
+  --text-color-todo-completed: var(--clr-secondary-300);
+
+  --text-color-controls: var(--clr-secondary-200);
+  --text-color-controls-active: var(--clr-primary-300);
+  --text-color-controls-selected: var(--clr-accent-200);
+}
+
+:root[data-theme="theme-light"] {
+  --bg-header-image: var(--bg-header-image-mobile-light);
+  --bg-color: var(--clr-primary-100);
+
+  --text-color-form: var(--clr-primary-800);
+  --text-color-form-active: var(--clr-secondary-600);
+
+  --text-color-todo: var(--clr-secondary-400);
+  --text-color-todo-completed: var(--clr-primary-500);
+
+  --text-color-controls: var(--clr-primary-800);
+  --text-color-controls-active: var(--clr-secondary-400);
+  --text-color-controls-selected: var(--clr-accent-200);
+}
+
+@media (min-width: 45em) {
+  :root[data-theme="theme-dark"] {
+    --bg-header-image: var(--bg-header-image-desktop-dark);
+  }
+  :root[data-theme="theme-light"] {
+    --bg-header-image: var(--bg-header-image-desktop-light);
+  }
+}
+/* ================================= */
 /*            TYPOGRAPHY            */
 /* ================================= */
 
+/* This styles are currently setup in the dark mode version*/
 body {
-  --bg-header-image: var(--bg-header-image-mobile-dark);
-
-  --text-color: var(--clr-primary-600);
-  --bg-color: var(--clr-secondary-700);
-
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
 
@@ -186,7 +224,6 @@ body {
   --fw-regular: var(--fw-400);
   --fw-bold: var(--fw-700);
 
-  color: var(--text-color);
   background-color: var(--bg-color);
   font-family: var(--ff-body);
   font-size: var(--fs-body);
@@ -208,10 +245,13 @@ body {
 
 .btn {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   border: none;
   border-radius: var(--b-radius);
   outline: none;
-  background: transparent;
+  background-color: transparent;
   font: inherit;
   letter-spacing: var(--spacing);
   text-align: center;
@@ -251,14 +291,10 @@ body {
 .justify-between {
   justify-content: space-between;
 }
-.justify-between {
-  justify-content: space-between;
-}
 
 /* *********** TYPOGRAPHY UTILS ************* */
 
 /* FONT SIZES */
-
 .fs-xl {
   font-size: var(--fs-xl);
 }
@@ -291,7 +327,6 @@ body {
 }
 
 /* FONT WEIGHTS */
-
 .fw-700 {
   font-weight: var(--fw-700);
 }
@@ -300,6 +335,21 @@ body {
 }
 .fw-300 {
   font-weight: var(--fw-300);
+}
+
+/* LETTER SPACING */
+.tracking-100 {
+  letter-spacing: -0.19px;
+}
+.tracking-200 {
+  letter-spacing: -0.25px;
+}
+.tracking-900 {
+  letter-spacing: 15px;
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
 }
 
 .uppercase {
@@ -316,9 +366,11 @@ body {
   white-space: nowrap;
   border: 0;
 }
+:where(:has(.sr-only)) {
+  position: relative;
+}
 
 /* layout */
-
 .container {
   width: min(90%, 54rem);
   margin-inline: auto;

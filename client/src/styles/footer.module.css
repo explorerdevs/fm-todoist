@@ -1,4 +1,4 @@
-footer {
+.footer {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -9,7 +9,7 @@ footer {
   text-align: center;
 }
 
-footer a {
+.footer a {
   font-size: 12px;
   font-weight: var(--fw-300);
   text-align: center;

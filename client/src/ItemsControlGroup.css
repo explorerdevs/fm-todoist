@@ -1,8 +1,0 @@
-.container {
-  width: min(90%, 22rem); /* chooses 90% width on mobile  */
-  margin-inline: auto;
-}
-
-.items-control-group {
-  padding: .75em 0;
-}
