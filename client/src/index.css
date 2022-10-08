@@ -21,15 +21,16 @@ Version: 01
   --clr-primary-500: #d1d2da;
   --clr-primary-600: #c8cbe7;
   --clr-primary-700: #9394a5;
+  --clr-primary-800: #9495a5;
 
   --clr-secondary-100: #767992;
   --clr-secondary-200: #5b5e7e;
   --clr-secondary-300: #4d5067;
   --clr-secondary-400: #494c6b;
-  --clr-secondary-600: #484b6a;
-  --clr-secondary-500: #393a4b;
-  --clr-secondary-600: #25273d;
-  --clr-secondary-700: #171823;
+  --clr-secondary-500: #484b6a;
+  --clr-secondary-600: #393a4b;
+  --clr-secondary-700: #25273d;
+  --clr-secondary-800: #171823;
 
   --clr-accent-100: #55ddff;
   --clr-accent-200: #3a7cfd;
@@ -172,12 +173,13 @@ a {
 
 :root[data-theme="theme-dark"] {
   --bg-header-image: var(--bg-header-image-mobile-dark);
+  --bg-color: var(--clr-secondary-700);
+
+  --text-color-form: var(--clr-secondary-100);
+  --text-color-form-active: var(--clr-primary-600);
 
   --text-color-todo: var(--clr-primary-600);
-  --text-color-todo-active: var(--clr-primary-600);
-
-  --text-color-form: var(--clr-secondary-300);
-  --text-color-form-active: var(--clr-primary-600);
+  --text-color-todo-completed: var(--clr-secondary-300);
 
   --text-color-controls: var(--clr-secondary-200);
   --text-color-controls-active: var(--clr-primary-300);
@@ -186,15 +188,16 @@ a {
 
 :root[data-theme="theme-light"] {
   --bg-header-image: var(--bg-header-image-mobile-light);
+  --bg-color: var(--clr-primary-100);
 
-  --text-color-todo: var(--clr-primary-600);
-  --text-color-todo-active: var(--clr-primary-600);
+  --text-color-form: var(--clr-primary-800);
+  --text-color-form-active: var(--clr-secondary-600);
 
-  --text-color-form: var(--clr-secondary-300);
-  --text-color-form-active: var(--clr-primary-600);
+  --text-color-todo: var(--clr-secondary-400);
+  --text-color-todo-completed: var(--clr-primary-500);
 
-  --text-color-controls: var(--clr-secondary-200);
-  --text-color-controls-active: var(--clr-primary-300);
+  --text-color-controls: var(--clr-primary-800);
+  --text-color-controls-active: var(--clr-secondary-400);
   --text-color-controls-selected: var(--clr-accent-200);
 }
 
@@ -212,8 +215,6 @@ a {
 
 /* This styles are currently setup in the dark mode version*/
 body {
-  --bg-color: var(--clr-secondary-700);
-
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
 
