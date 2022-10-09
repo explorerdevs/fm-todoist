@@ -11,7 +11,7 @@ const Header = () => {
           <ThemeBtn />
         </div>
 
-        <form className="flex flex-row items-center ">
+        <form className={`${styles["input-field"]} flex flex-row items-center `}>
           <GradientBtn type="submit" srtext="Submit" />
           <input
             type="text"
