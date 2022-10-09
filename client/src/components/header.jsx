@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className={styles["primary-header"]}>
       <div className="container flex flex-column justify-between">
-        <div className="flex flex-row items-center justify-between ">
+        <div className="flex flex-row items-center justify-between margin-top">
           <h1 className="text-neutral-100 fs-900 fw-700 tracking-900">TODO</h1>
           <ThemeBtn />
         </div>
