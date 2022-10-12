@@ -67,6 +67,8 @@ Version: 01
   --fw-700: 700;
 
   --ff-primary: "Josefin Sans", sans-serif;
+
+  --b-radius: .5rem;
 }
 
 /* ================================= */
@@ -290,6 +292,11 @@ body {
 }
 .justify-between {
   justify-content: space-between;
+}
+
+/* *********** MARGIN UTILS ************* */
+.margin-top {
+  margin-top: 3em;
 }
 
 /* *********** TYPOGRAPHY UTILS ************* */
