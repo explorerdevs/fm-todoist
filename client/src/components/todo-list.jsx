@@ -1,20 +1,53 @@
 import React from "react";
+import { DeleteBtn, GradientBtn } from "./buttons";
 import styles from "../styles/todo-list.module.css";
+import formStyles from "../styles/forms.module.css";
 
 const TodoList = () => {
   return (
     <section className="container">
       <ul aria-label="Todos" className="">
-        <li className="flex items-center">
-          <button type="button" className="btn btn-checkbox">
-            <span className="sr-only">Complete Todo</span>
+        <li
+          className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
+        >
+          <GradientBtn type="button" alt="complete" />
+          <p
+            className={`${formStyles["todo-text"]} ${formStyles["completed"]} `}
+          >
+            Complete online JavaScript course
+          </p>
+          <button type="button" className="btn btn-delete">
+            <span className="sr-only">Delete</span>
           </button>
-          <p className="">Jog around the park 3x</p>
+        </li>
+        <li
+          className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
+        >
+          <GradientBtn type="button" alt="complete" />
+          <p className={`${formStyles["todo-text"]}`}>Jog around the park 3x</p>
           <button type="button" className="btn btn-delete">
             <span className="sr-only">Delete</span>
           </button>
         </li>
       </ul>
+
+      {/* 
+      We can add this same form from the header:
+ 
+
+      <form
+        className={`${styles["list-wrapper__input"]} flex flex-row items-center `}
+      >
+        <GradientBtn type="submit" srtext="Submit" />
+        <input
+          type="text"
+          className=""
+          name="todo"
+          id="todo"
+          placeholder="Create a new todo..."
+        />
+      </form>
+  */}
 
       {/* Note: Use grid for this */}
       <div className={styles["todo__controls"]}>
