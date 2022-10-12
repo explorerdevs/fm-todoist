@@ -68,7 +68,7 @@ Version: 01
 
   --ff-primary: "Josefin Sans", sans-serif;
 
-  --b-radius: .5rem;
+  --b-radius: 0.5rem;
 }
 
 /* ================================= */
@@ -175,7 +175,7 @@ a {
 
 :root[data-theme="theme-dark"] {
   --bg-header-image: var(--bg-header-image-mobile-dark);
-  --bg-color: var(--clr-secondary-700);
+  --bg-color: var(--clr-secondary-800);
 
   --text-color-form: var(--clr-secondary-100);
   --text-color-form-active: var(--clr-primary-600);

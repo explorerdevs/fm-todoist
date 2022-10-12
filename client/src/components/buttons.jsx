@@ -1,11 +1,11 @@
 import React from "react";
-import { SunSvg } from "../common";
+import { SunSvg, CrossSvg } from "../common";
 import btnStyles from "../styles/buttons.module.css";
 
-const GradientBtn = ({ type, srtext }) => {
+const GradientBtn = ({ type, alt }) => {
   return (
     <button type={type} className={`btn ${btnStyles["btn-checkbox"]}`}>
-      <span className="sr-only">{srtext}</span>
+      <span className="sr-only">{alt}</span>
     </button>
   );
 };
@@ -19,4 +19,13 @@ const ThemeBtn = () => {
   );
 };
 
-export { GradientBtn, ThemeBtn };
+const DeleteBtn = () => {
+  return (
+    <button type="button" className={`btn ${btnStyles["btn-delete"]}`}>
+      <img src={CrossSvg} alt="" />
+      <span className="sr-only">Delete</span>
+    </button>
+  );
+};
+
+export { GradientBtn, ThemeBtn, DeleteBtn };
