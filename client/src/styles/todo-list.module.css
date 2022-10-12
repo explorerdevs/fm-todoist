@@ -1,2 +1,16 @@
+.todo {
+  margin-left: 2em;
+  background-color: var(--clr-neutral-900);
+}
+
+.todo__list {
+  max-width: 90vw;
+  margin-inline: auto;
+  padding: .75em;
+  background-color: var(--clr-secondary-700);
+}
+
 .todo__controls {
+  padding: .75em;
+  background-color: var(--clr-secondary-700);
 }

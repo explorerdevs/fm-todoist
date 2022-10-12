@@ -4,8 +4,8 @@ import styles from "../styles/todo-list.module.css";
 const TodoList = () => {
   return (
     <section className="container">
-      <ul aria-label="Todos" className="">
-        <li className="flex items-center">
+      <ul aria-label="Todos" className="todo">
+        <li className="flex items-center todo__list">
           <button type="button" className="btn btn-checkbox">
             <span className="sr-only">Complete Todo</span>
           </button>
