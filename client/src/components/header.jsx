@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/header.module.css";
+import formStyles from "../styles/forms.module.css";
 import { GradientBtn, ThemeBtn } from "./buttons";
 
 const Header = () => {
@@ -11,11 +12,13 @@ const Header = () => {
           <ThemeBtn />
         </div>
 
-        <form className={`${styles["list-wrapper__input"]} flex flex-row items-center `}>
-          <GradientBtn type="submit" srtext="Submit" />
+        <form
+          className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
+        >
+          <GradientBtn type="submit" alt="submit" />
           <input
             type="text"
-            className=""
+            className={`${formStyles["todo-text"]}`}
             name="todo"
             id="todo"
             placeholder="Create a new todo..."
