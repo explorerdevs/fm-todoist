@@ -10,7 +10,7 @@ const fetchTodos = async (req, res) => {
 };
 
 const findTodoById = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
   if (!id) {
     return res.status(400).json({ message: "Todo ID required" });
   }
@@ -39,7 +39,8 @@ const createTodo = async (req, res) => {
 };
 
 const updateTodo = async (req, res) => {
-  const { id, todo, completed } = req.body;
+  const {id} = req.params;
+  const { todo, completed } = req.body;
   if (!id || !todo || typeof completed !== "boolean") {
     return res.status(400).json({ message: "All fields are required" });
   }
@@ -61,7 +62,7 @@ const updateTodo = async (req, res) => {
 };
 
 const deleteTodo = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
   if (!id) {
     return res.status(400).json({ message: "Todo ID required" });
   }
@@ -74,7 +75,7 @@ const deleteTodo = async (req, res) => {
       .json({ message: `The todo with the id ${id} does not exist` });
   }
 
-  const deletedTodo = await todo.deleteOne();
+  await Todo.deleteById(id);
   res.status(200).json({ message: `The todo with the ID ${id} is deleted` });
 };
 
