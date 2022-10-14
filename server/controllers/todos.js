@@ -39,7 +39,7 @@ const createTodo = async (req, res) => {
 };
 
 const updateTodo = async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   const { todo, completed } = req.body;
   if (!id || !todo || typeof completed !== "boolean") {
     return res.status(400).json({ message: "All fields are required" });
@@ -75,7 +75,7 @@ const deleteTodo = async (req, res) => {
       .json({ message: `The todo with the id ${id} does not exist` });
   }
 
-  await Todo.deleteById(id);
+  await Todo.deleteOne(todo);
   res.status(200).json({ message: `The todo with the ID ${id} is deleted` });
 };
 
