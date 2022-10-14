@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API_URL = "https://fm-todoist.up.railway.app/api/v1/todos";
-const API_URL = "http://localhost:3500/api/v1/todos";
+const API_URL = "https://fm-todoist.up.railway.app/api/v1/todos";
+//const API_URL = "http://localhost:3500/api/v1/todos";
 
 const createTodo = async(todo) => {
     try {
