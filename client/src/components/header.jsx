@@ -2,8 +2,16 @@ import React from "react";
 import styles from "../styles/header.module.css";
 import formStyles from "../styles/forms.module.css";
 import { GradientBtn, ThemeBtn } from "./buttons";
+import api from "../API/api";
 
-const Header = () => {
+const Header = ({ setRefetch }) => {
+  const createTodo = async (e) => {
+    e.preventDefault();
+    await api.createTodo({ todo: e.target.todo.value });
+    e.target.todo.value = "";
+    setRefetch(true);
+  };
+
   return (
     <header className={styles["primary-header"]}>
       <div className="container flex flex-column justify-between">
@@ -14,6 +22,7 @@ const Header = () => {
 
         <form
           className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
+          onSubmit={(e) => createTodo(e)}
         >
           <GradientBtn type="submit" alt="submit" />
           <input
