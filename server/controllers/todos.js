@@ -6,11 +6,11 @@ const fetchTodos = async (req, res) => {
     return res.status(404).json({ message: "No todos found" });
   }
 
-  res.send(todos);
+  res.json(todos);
 };
 
 const findTodoById = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
   if (!id) {
     return res.status(400).json({ message: "Todo ID required" });
   }
@@ -22,7 +22,7 @@ const findTodoById = async (req, res) => {
       .json({ message: `The todo with the id ${id} does not exist` });
   }
 
-  res.send(todo);
+  res.json(todo);
 };
 
 const createTodo = async (req, res) => {
@@ -39,7 +39,8 @@ const createTodo = async (req, res) => {
 };
 
 const updateTodo = async (req, res) => {
-  const { id, todo, completed } = req.body;
+  const { id } = req.params;
+  const { todo, completed } = req.body;
   if (!id || !todo || typeof completed !== "boolean") {
     return res.status(400).json({ message: "All fields are required" });
   }
@@ -50,18 +51,15 @@ const updateTodo = async (req, res) => {
       .status(400)
       .json({ message: `The todo with the id ${id} does not exist` });
   }
+  const updatedTodo = await Todo.findByIdAndUpdate(id, req.body);
 
-  todoToUpdate.text = todo;
-  todoToUpdate.completed = completed;
-
-  const updatedTodo = await todoToUpdate.save();
   res
     .status(200)
-    .json({ message: `The todo with id: "${updatedTodo?._id}" is updated` });
+    .json({ message: `The todo with id: ${updatedTodo?._id} is updated` });
 };
 
 const deleteTodo = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
   if (!id) {
     return res.status(400).json({ message: "Todo ID required" });
   }
@@ -74,7 +72,7 @@ const deleteTodo = async (req, res) => {
       .json({ message: `The todo with the id ${id} does not exist` });
   }
 
-  const deletedTodo = await todo.deleteOne();
+  await Todo.findByIdAndDelete(id);
   res.status(200).json({ message: `The todo with the ID ${id} is deleted` });
 };
 
