@@ -25,7 +25,7 @@ const TodoList = ({ refetch, setRefetch }) => {
   //Todo Implement update when completed button is pressed
   const updateTodo = async (todo) => {
     await api.updateTodo(todo._id, {
-      text: todo.text,
+      todo: todo.text,
       completed: !todo.completed,
     });
     setRefetch(true);
@@ -44,13 +44,13 @@ const TodoList = ({ refetch, setRefetch }) => {
   // filter of active
 
   const filterActiveTodos = () => {
-    const filteredTodos = todos.filter((todo) => !todo.completed);
+    const filteredTodos = todosWithoutFilter.filter((todo) => !todo.completed);
     setTodos(filteredTodos);
   };
 
   // filter of completed
   const filterCompletedTodos = () => {
-    const filteredTodos = todos.filter((todo) => todo.completed);
+    const filteredTodos = todosWithoutFilter.filter((todo) => todo.completed);
     setTodos(filteredTodos);
   };
 
@@ -67,26 +67,30 @@ const TodoList = ({ refetch, setRefetch }) => {
     <section className="container">
       <ul aria-label="Todos">
         {todos.map((todo) => {
-          <li
-            id={todo._id}
-            className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
-          >
-            <GradientBtn type="button" alt="complete" />
-            <p
-              className={`${formStyles["todo-text"]} ${formStyles["completed"]} `}
-              onClick={(e) => updateTodo(todo)}
+          return (
+            <li
+              id={todo._id}
+              className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
             >
-              {`${todo.text} text`}
-            </p>
-            <button
-              onClick={(e) => deleteTodo(todo._id)}
-              type="button"
-              className="btn btn-delete"
-              style={{ color: "white" }}
-            >
-              <span className="sr-only">Delete</span>
-            </button>
-          </li>
+              <GradientBtn type="button" alt="complete" />
+              <p
+                className={`${formStyles["todo-text"]} ${
+                  todo.completed && formStyles["completed"]
+                } `}
+                onClick={(e) => updateTodo(todo)}
+              >
+                {`${todo.text}`}
+              </p>
+              <button
+                onClick={(e) => deleteTodo(todo._id)}
+                type="button"
+                className="btn btn-delete"
+                style={{ backgroundColor: "white" }}
+              >
+                <span className="sr-only">Delete</span>
+              </button>
+            </li>
+          );
         })}
       </ul>
       {/* Note: Use grid for this */}
