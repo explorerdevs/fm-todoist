@@ -67,26 +67,29 @@ const TodoList = ({ refetch, setRefetch }) => {
     <section className="container">
       <ul aria-label="Todos">
         {todos.map((todo) => {
-          <li
-            id={todo._id}
-            className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
-          >
-            <GradientBtn type="button" alt="complete" />
-            <p
-              className={`${formStyles["todo-text"]} ${formStyles["completed"]} `}
-              onClick={(e) => updateTodo(todo)}
+          return (
+            <li
+              key={todo._id}
+              id={todo._id}
+              className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
             >
-              {`${todo.text} text`}
-            </p>
-            <button
-              onClick={(e) => deleteTodo(todo._id)}
-              type="button"
-              className="btn btn-delete"
-              style={{ color: "white" }}
-            >
-              <span className="sr-only">Delete</span>
-            </button>
-          </li>
+              <GradientBtn type="button" alt="complete" />
+              <p
+                className={`${formStyles["todo-text"]} ${formStyles["completed"]} `}
+                onClick={(e) => updateTodo(todo)}
+              >
+                {`${todo.text} text`}
+              </p>
+              <button
+                onClick={(e) => deleteTodo(todo._id)}
+                type="button"
+                className="btn btn-delete"
+                style={{ color: "white" }}
+              >
+                <span className="sr-only">Delete</span>
+              </button>
+            </li>
+          );
         })}
       </ul>
       {/* Note: Use grid for this */}
