@@ -4,6 +4,9 @@ import formStyles from "../styles/forms.module.css";
 import { GradientBtn, ThemeBtn } from "./buttons";
 import api from "../API/api";
 
+// Maybe we can use useContext and .unshift array method here so we
+// can add to do at the beginning of the list.
+
 const Header = ({ setRefetch }) => {
   const createTodo = async (e) => {
     e.preventDefault();
