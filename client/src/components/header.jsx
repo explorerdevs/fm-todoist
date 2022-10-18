@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "../styles/header.module.css";
-import formStyles from "../styles/forms.module.css";
-import { GradientBtn, ThemeBtn } from "./buttons";
 import api from "../API/api";
+import formStyles from "../styles/forms.module.css";
+import styles from "../styles/header.module.css";
+import { GradientBtn, ThemeBtn } from "./buttons";
 
 // Maybe we can use useContext and .unshift array method here so we
 // can add to do at the beginning of the list.
