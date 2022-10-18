@@ -1,12 +1,12 @@
-import React, { createContext, useContext } from "react";
+import * as React from "react";
 import { useLocalStorage } from "../hooks";
 
-const ThemeContext = createContext();
+const themes = ["theme-light", `theme-dark`];
+
+const ThemeContext = React.createContext({});
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage("current-theme", {
-    current: "theme-light",
-  });
+  const [theme, setTheme] = useLocalStorage("current-theme", themes[0]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -16,20 +16,35 @@ export const ThemeProvider = ({ children }) => {
 };
 
 export const useTheme = () => {
-  const context = useContext(ThemeContext);
+  const context = React.useContext(ThemeContext);
   if (context == undefined) {
     throw new Error(`useTheme must be used within a ThemeProvider`);
   }
 
   const { theme, setTheme } = context;
+  const [themeLoaded, setThemeLoaded] = React.useState(false);
 
   const toggleTheme = () => {
-    setTheme((prev) =>
-      prev.current === "theme-light" ? `theme-dark` : `theme-light`
-    );
+    themeLoaded &&
+      setTheme((prev) =>
+        prev === "theme-light" ? `theme-dark` : `theme-light`
+      );
   };
 
+  React.useEffect(() => {
+    setThemeLoaded(true);
+
+    const element = document.querySelector(":root");
+    element?.setAttribute("data-theme", theme);
+    setTheme(theme);
+
+    return () => {
+      setThemeLoaded(false);
+    };
+  }, [theme]);
+
   return {
+    theme,
     toggleTheme,
   };
 };
