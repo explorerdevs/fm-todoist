@@ -1,5 +1,6 @@
 import React from "react";
-import { SunSvg, CrossSvg } from "../common";
+import { CrossSvg, MoonSvg, SunSvg } from "../common";
+import { useTheme } from "../context";
 import btnStyles from "../styles/buttons.module.css";
 
 const GradientBtn = ({ type, alt }) => {
@@ -11,9 +12,15 @@ const GradientBtn = ({ type, alt }) => {
 };
 
 const ThemeBtn = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <button type="button" className={`btn ${btnStyles["btn-toggle"]}`}>
-      <img src={SunSvg} alt="" />
+    <button
+      type="button"
+      className={`btn ${btnStyles["btn-toggle"]}`}
+      onClick={toggleTheme}
+    >
+      <img src={theme === "theme-light" ? MoonSvg : SunSvg} alt="" />
       <span className="sr-only">Toggle The Theme</span>
     </button>
   );
