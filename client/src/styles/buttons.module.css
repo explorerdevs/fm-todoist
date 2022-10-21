@@ -26,3 +26,8 @@
   border-radius: inherit;
   background: var(--clr-secondary-600);
 }
+
+.btn-delete {
+  visibility: hidden;
+  margin-inline-start: auto;
+}
