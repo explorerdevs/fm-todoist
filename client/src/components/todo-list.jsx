@@ -82,22 +82,21 @@ const TodoList = ({ refetch, setRefetch }) => {
               </p>
               <DeleteBtn onClick={() => deleteTodo(todo._id)}
                 type="button"
-                className="btn btn-delete"
-                style={{ color: "white" }} />
+                className="btn btn-delete" />
             </li>
           );
         })}
       </ul>
       {/* Note: Use grid for this */}
       <div className={styles["todo__controls"]}>
-        <p style={{ color: "white" }}>{remainingTodos}</p>
+        <p >{remainingTodos}</p>
 
         <div className="filter-btns">
           <button
             type="button"
             className="btn btn-filter"
             onClick={filterAllTodos}
-            style={{ color: "white" }}
+
           >
             All
           </button>
@@ -105,7 +104,6 @@ const TodoList = ({ refetch, setRefetch }) => {
             type="button"
             className="btn btn-filter"
             onClick={filterActiveTodos}
-            style={{ color: "white" }}
           >
             Active
           </button>
@@ -113,7 +111,6 @@ const TodoList = ({ refetch, setRefetch }) => {
             type="button"
             className="btn btn-filter"
             onClick={filterCompletedTodos}
-            style={{ color: "white" }}
           >
             Completed
           </button>
@@ -122,7 +119,6 @@ const TodoList = ({ refetch, setRefetch }) => {
           type="button"
           className="btn btn-clear"
           onClick={deleteCompletedTodos}
-          style={{ color: "white" }}
         >
           Clear Completed
         </button>

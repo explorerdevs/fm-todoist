@@ -28,7 +28,7 @@ const ThemeBtn = () => {
 
 const DeleteBtn = ({ onClick }) => {
   return (
-    <button onClick={onClick} type="button" className={`btn ${btnStyles["btn-delete"]}`}>
+    <button onClick={onClick} type="button" className={`btn ${btnStyles["btn-delete"]}`} data-type="delete">
       <img src={CrossSvg} alt="" />
       <span className="sr-only">Delete</span>
     </button>

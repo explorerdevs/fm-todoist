@@ -275,6 +275,10 @@ body {
   outline: none;
 }
 
+li:hover [data-type="delete"] {
+  visibility: visible;
+}
+
 /* *********** FLEX UTILS ************* */
 .flex {
   display: flex;
