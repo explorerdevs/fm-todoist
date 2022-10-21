@@ -80,14 +80,10 @@ const TodoList = ({ refetch, setRefetch }) => {
               >
                 {`${todo.text} text`}
               </p>
-              <button
-                onClick={(e) => deleteTodo(todo._id)}
+              <DeleteBtn onClick={() => deleteTodo(todo._id)}
                 type="button"
                 className="btn btn-delete"
-                style={{ color: "white" }}
-              >
-                <span className="sr-only">Delete</span>
-              </button>
+                style={{ color: "white" }} />
             </li>
           );
         })}
@@ -153,4 +149,4 @@ const TodoList = ({ refetch, setRefetch }) => {
       </form>
   */
 
-          export {TodoList};
+export { TodoList };
