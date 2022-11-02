@@ -3,7 +3,10 @@ import { useLocalStorage } from "../hooks";
 
 const themes = ["theme-light", `theme-dark`];
 
-const ThemeContext = React.createContext({});
+const ThemeContext = React.createContext({
+  theme: null,
+  setTheme: null,
+});
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useLocalStorage("current-theme", themes[0]);
