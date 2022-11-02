@@ -66,7 +66,7 @@ const TodoList = ({ refetch, setRefetch }) => {
   return (
     <section className="container">
       <ul aria-label="Todos">
-        {todos.map((todo) => {
+        {todos ? todos.map((todo) => {
           return (
             <li
               key={todo._id}
@@ -85,7 +85,7 @@ const TodoList = ({ refetch, setRefetch }) => {
                 className="btn btn-delete" />
             </li>
           );
-        })}
+        }) : <p>No todos today!</p>}
       </ul>
       {/* Note: Use grid for this */}
       <div className={styles["todo__controls"]}>
