@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { DeleteBtn, GradientBtn } from "./buttons";
-import styles from "../styles/todo-list.module.css";
-import formStyles from "../styles/forms.module.css";
+import React, { useEffect, useState } from "react";
 import api from "../API/api";
+import formStyles from "../styles/forms.module.css";
+import styles from "../styles/todo-list.module.css";
+import { DeleteBtn, GradientBtn } from "./buttons";
 
 const TodoList = ({ refetch, setRefetch }) => {
   const [todosWithoutFilter, setTodosWithoutFilter] = useState([]);
@@ -66,37 +66,44 @@ const TodoList = ({ refetch, setRefetch }) => {
   return (
     <section className="container">
       <ul aria-label="Todos">
-        {todos ? todos.map((todo) => {
-          return (
-            <li
-              key={todo._id}
-              className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
-            >
-              <GradientBtn type="button" alt="complete" />
-              <p
-                className={`${formStyles["todo-text"]} ${todo.completed && formStyles["completed"]} `}
-                onClick={(e) => updateTodo(todo)}
+        {todos && todos?.length > 0 ? (
+          todos.map((todo) => {
+            return (
+              <li
+                key={todo._id}
+                className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
               >
-                {`${todo.text} text`}
-              </p>
-              <DeleteBtn onClick={() => deleteTodo(todo._id)}
-                type="button"
-                className="btn btn-delete" />
-            </li>
-          );
-          // added empty list message
-        }) : <p>No todos today!</p>}
+                <GradientBtn type="button" alt="complete" />
+                <p
+                  className={`${formStyles["todo-text"]} ${
+                    todo.completed && formStyles["completed"]
+                  } `}
+                  onClick={(e) => updateTodo(todo)}
+                >
+                  {`${todo.text}`}
+                </p>
+                <DeleteBtn
+                  onClick={() => deleteTodo(todo._id)}
+                  type="button"
+                  className="btn btn-delete"
+                />
+              </li>
+            );
+            // added empty list message
+          })
+        ) : (
+          <p>No todos today!</p>
+        )}
       </ul>
       {/* Note: Use grid for this */}
       <div className={styles["todo__controls"]}>
-        <p >{remainingTodos}</p>
+        <p>{remainingTodos}</p>
 
         <div className="filter-btns">
           <button
             type="button"
             className="btn btn-filter"
             onClick={filterAllTodos}
-
           >
             All
           </button>
@@ -126,23 +133,5 @@ const TodoList = ({ refetch, setRefetch }) => {
     </section>
   );
 };
-
-/*
-      We can add this same form from the header:
-
-
-      <form
-        className={`${styles["list-wrapper__input"]} flex flex-row items-center `}
-      >
-        <GradientBtn type="submit" srtext="Submit" />
-        <input
-          type="text"
-          className=""
-          name="todo"
-          id="todo"
-          placeholder="Create a new todo..."
-        />
-      </form>
-  */
 
 export { TodoList };
