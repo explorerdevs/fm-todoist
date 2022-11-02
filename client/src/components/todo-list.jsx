@@ -85,6 +85,7 @@ const TodoList = ({ refetch, setRefetch }) => {
                 className="btn btn-delete" />
             </li>
           );
+          // added empty list message
         }) : <p>No todos today!</p>}
       </ul>
       {/* Note: Use grid for this */}
