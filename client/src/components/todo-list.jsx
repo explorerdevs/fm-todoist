@@ -70,12 +70,11 @@ const TodoList = ({ refetch, setRefetch }) => {
           return (
             <li
               key={todo._id}
-              id={todo._id}
               className={`${formStyles["list-wrapper__input"]} flex flex-row items-center `}
             >
               <GradientBtn type="button" alt="complete" />
               <p
-                className={`${formStyles["todo-text"]} ${formStyles["completed"]} `}
+                className={`${formStyles["todo-text"]} ${todo.completed && formStyles["completed"]} `}
                 onClick={(e) => updateTodo(todo)}
               >
                 {`${todo.text} text`}
