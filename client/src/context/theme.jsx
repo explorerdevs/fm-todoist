@@ -1,53 +1,80 @@
-import * as React from "react";
-import { useLocalStorage } from "../hooks";
+import * as React from 'react';
 
-const themes = ["theme-light", `theme-dark`];
+const ThemeContext = React.createContext(null);
+const SetThemeContext = React.createContext(null);
 
-const ThemeContext = React.createContext({
-  theme: null,
-  setTheme: null,
-});
+const ThemeProvider = ({ children }) => {
+  const [mode, setMode] = useDarkMode();
 
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage("current-theme", themes[0]);
+  const modeValue = React.useMemo(() => mode, [mode]);
+  const setModeValue = React.useMemo(() => setMode, [setMode]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
+    <ThemeContext.Provider value={modeValue}>
+      <SetThemeContext.Provider value={setModeValue}>
+        {children}
+      </SetThemeContext.Provider>
     </ThemeContext.Provider>
   );
 };
 
-export const useTheme = () => {
+const useTheme = () => {
   const context = React.useContext(ThemeContext);
   if (context == undefined) {
-    throw new Error(`useTheme must be used within a ThemeProvider`);
+    throw new Error('useTheme must be used in a ThemeProvider');
+  }
+  return context;
+};
+
+const useSetTheme = () => {
+  const context = React.useContext(SetThemeContext);
+  if (context == undefined) {
+    throw new Error('useSetTheme must be used in a ThemeProvider');
   }
 
-  const { theme, setTheme } = context;
-  const [themeLoaded, setThemeLoaded] = React.useState(false);
+  return context;
+};
 
-  const toggleTheme = () => {
-    themeLoaded &&
-      setTheme((prev) =>
-        prev === "theme-light" ? `theme-dark` : `theme-light`
-      );
-  };
+// only these 3 exported functions below are for app usage
+export { useTheme, useSetTheme, ThemeProvider };
+
+////////////////////////////////////////
+////                              /////
+//////////////////////////////////////
+// This useDarkMode hook is not for use.
+// It exists only for the theme provider
+const preferDarkQuery = '(prefers-color-scheme: dark)';
+
+function useDarkMode() {
+  const [mode, setMode] = React.useState(() => {
+    const value = window.localStorage.getItem('theme-mode');
+    if (value) {
+      return value === 'dark' ? 'dark' : 'light';
+    } else {
+      return window.matchMedia(preferDarkQuery).matches ? 'dark' : 'light';
+    }
+  });
 
   React.useEffect(() => {
-    setThemeLoaded(true);
+    const mediaQuery = window.matchMedia(preferDarkQuery);
 
-    const element = document.querySelector(":root");
-    element?.setAttribute("data-theme", theme);
-    setTheme(theme);
+    const handleChange = () => {
+      setMode(mediaQuery.matches ? 'dark' : 'light');
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
 
     return () => {
-      setThemeLoaded(false);
+      mediaQuery.removeEventListener('change', handleChange);
     };
-  }, [theme]);
+  }, []);
 
-  return {
-    theme,
-    toggleTheme,
-  };
-};
+  React.useEffect(() => {
+    window.localStorage.setItem('theme-mode', mode);
+    document.documentElement.setAttribute('data-theme', mode);
+  }, [mode]);
+
+  // we're doing it this way instead of as an effect so we only
+  // set the localStorage value if they explicitly change the default
+  return [mode, setMode];
+}
