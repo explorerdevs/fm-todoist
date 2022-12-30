@@ -10,6 +10,9 @@ Version: 01
 /* ////////////////////////////////////////////
 // BASE CONFIGURATION
 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   color-scheme: light dark;
 
@@ -176,7 +179,7 @@ a {
 /*            THEME                  */
 /* ================================= */
 
-:root[data-theme="theme-dark"] {
+:root[data-theme="dark"] {
   --bg-header-image: var(--bg-header-image-mobile-dark);
   --bg-color: var(--clr-secondary-800);
   --bg-color-btn-delete: var(--clr-secondary-200);
@@ -192,7 +195,7 @@ a {
   --text-color-controls-selected: var(--clr-accent-200);
 }
 
-:root[data-theme="theme-light"] {
+:root[data-theme="light"] {
   --bg-header-image: var(--bg-header-image-mobile-light);
   --bg-color: var(--clr-primary-100);
   --bg-color-btn-delete: var(--clr-secondary-400);
@@ -209,15 +212,13 @@ a {
 }
 
 @media (min-width: 45em) {
-  :root[data-theme="theme-dark"] {
+  :root[data-theme="dark"] {
     --bg-header-image: var(--bg-header-image-desktop-dark);
   }
-  :root[data-theme="theme-light"] {
+  :root[data-theme="light"] {
     --bg-header-image: var(--bg-header-image-desktop-light);
   }
 }
-
-
 
 /* ================================= */
 /*            TYPOGRAPHY            */
