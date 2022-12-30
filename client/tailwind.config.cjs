@@ -45,8 +45,24 @@ module.exports = {
         300: "#c058f3",
       },
     },
+    fontSize: {
+      100: "1rem",
+      200: "1.2rem",
+      300: "1.4rem",
+      400: "1.5rem",
+      500: "1.6rem",
+      600: "1.8rem",
+      700: "2.4rem",
+      800: "3.6rem",
+      900: "4rem",
+    },
     fontFamily: {
       sans: ["Josefin Sans", ...defaultTheme.fontFamily.sans],
+    },
+    letterSpacing: {
+      100: "-0.19px",
+      200: "-0.25px",
+      900: "1.5rem",
     },
 
     screens: {
