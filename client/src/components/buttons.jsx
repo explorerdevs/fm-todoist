@@ -12,16 +12,16 @@ const GradientBtn = ({ type, alt }) => {
 };
 
 const ThemeBtn = () => {
-   const setTheme = useSetTheme();
+  const setTheme = useSetTheme();
   const theme = useTheme();
 
   return (
     <button
       type="button"
       className={`btn ${btnStyles["btn-toggle"]}`}
-         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      <img src={theme === "theme-light" ? MoonSvg : SunSvg} alt="" />
+      <img src={theme === "light" ? MoonSvg : SunSvg} alt="" />
       <span className="sr-only">Toggle The Theme</span>
     </button>
   );
@@ -29,7 +29,12 @@ const ThemeBtn = () => {
 
 const DeleteBtn = ({ onClick }) => {
   return (
-    <button onClick={onClick} type="button" className={`btn ${btnStyles["btn-delete"]}`} data-type="delete">
+    <button
+      onClick={onClick}
+      type="button"
+      className={`btn ${btnStyles["btn-delete"]}`}
+      data-type="delete"
+    >
       <img src={CrossSvg} alt="" />
       <span className="sr-only">Delete</span>
     </button>
