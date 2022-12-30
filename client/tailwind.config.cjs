@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     borderRadius: {
       ...defaultTheme.borderRadius,
-      default: "0.8rem",
+      default: "0.5rem",
       pill: "100vmax",
     },
     colors: {
@@ -44,6 +44,9 @@ module.exports = {
         200: "#3a7cfd",
         300: "#c058f3",
       },
+    },
+    fontFamily: {
+      sans: ["Josefin Sans", ...defaultTheme.fontFamily.sans],
     },
 
     screens: {
